@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Itinerary Calendar - Peru, Bolivia & Chile 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #fff;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #f39c12, #e74c3c, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header .trip-info {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        .peru { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .bolivia { background: linear-gradient(135deg, #f39c12, #d35400); }
+        .chile { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .travel { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .empty { background: linear-gradient(135deg, #7f8c8d, #95a5a6); }
+        
+        .calendar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .week {
+            margin-bottom: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        
+        .week-header {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            color: #f39c12;
+        }
+        
+        .week-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+        
+        @media (max-width: 900px) {
+            .week-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .week-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .day-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 15px;
+            min-height: 200px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .day-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .day-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+        
+        .day-card.peru::before { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+        .day-card.bolivia::before { background: linear-gradient(90deg, #f39c12, #d35400); }
+        .day-card.chile::before { background: linear-gradient(90deg, #3498db, #2980b9); }
+        .day-card.travel::before { background: linear-gradient(90deg, #9b59b6, #8e44ad); }
+        .day-card.empty::before { background: linear-gradient(90deg, #7f8c8d, #95a5a6); }
+        
+        .day-number {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .day-num {
+            font-size: 1.8rem;
+            font-weight: bold;
+            opacity: 0.3;
+        }
+        
+        .day-date {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        
+        .day-weekday {
+            font-size: 0.75rem;
+            color: #888;
+            text-transform: uppercase;
+        }
+        
+        .location {
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        
+        .location .flag {
+            margin-right: 5px;
+        }
+        
+        .activities {
+            font-size: 0.8rem;
+            color: #ccc;
+            line-height: 1.5;
+        }
+        
+        .activity-item {
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .activity-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #f39c12;
+        }
+        
+        .highlight {
+            background: rgba(243, 156, 18, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .country-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            margin-bottom: 5px;
+        }
+        
+        .country-badge.peru { background: rgba(231, 76, 60, 0.3); }
+        .country-badge.bolivia { background: rgba(243, 156, 18, 0.3); }
+        .country-badge.chile { background: rgba(52, 152, 219, 0.3); }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #f39c12;
+        }
+        
+        .stat-label {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .timeline {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+        }
+        
+        .timeline-bar {
+            display: flex;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .timeline-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .timeline-segment.peru { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+        .timeline-segment.bolivia { background: linear-gradient(90deg, #f39c12, #d35400); }
+        .timeline-segment.chile { background: linear-gradient(90deg, #3498db, #2980b9); }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌍 Peru • Bolivia • Chile</h1>
+        <div class="trip-info">
+            <strong>Adam & Emma's Adventure</strong><br>
+            June 27 – August 10, 2026 • 45 Days
+        </div>
+    </div>
+    
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">45</div>
+            <div class="stat-label">Total Days</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Countries</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">~21</div>
+            <div class="stat-label">Days in Peru</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">~10</div>
+            <div class="stat-label">Days in Bolivia</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">~14</div>
+            <div class="stat-label">Days in Chile</div>
+        </div>
+    </div>
+    
+    <div class="timeline">
+        <div class="timeline-bar">
+            <div class="timeline-segment peru" style="width: 47%;">🇵🇪 Peru (Days 1-21)</div>
+            <div class="timeline-segment bolivia" style="width: 22%;">🇧🇴 Bolivia (22-32)</div>
+            <div class="timeline-segment chile" style="width: 31%;">🇨🇱 Chile (33-45)</div>
+        </div>
+    </div>
+    
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-color peru"></div>
+            <span>Peru</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color bolivia"></div>
+            <span>Bolivia</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color chile"></div>
+            <span>Chile</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color travel"></div>
+            <span>Travel Day</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color empty"></div>
+            <span>TBD</span>
+        </div>
+    </div>
+    
+    <div class="calendar-container">
+        <!-- Week 1 -->
+        <div class="week">
+            <div class="week-header">📅 Week 1: June 27 – July 3</div>
+            <div class="week-grid">
+                <div class="day-card travel">
+                    <div class="day-number">
+                        <span class="day-num">1</span>
+                        <div>
+                            <div class="day-date">Jun 27</div>
+                            <div class="day-weekday">Saturday</div>
+                        </div>
+                    </div>
+                    <div class="location">✈️ Dublin → Lima</div>
+                    <div class="activities">
+                        <div class="activity-item">Depart Dublin 18:20</div>
+                        <div class="activity-item">Iberia via Madrid</div>
+                        <div class="activity-item">Overnight flight</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">2</span>
+                        <div>
+                            <div class="day-date">Jun 28</div>
+                            <div class="day-weekday">Sunday</div>
+                        </div>
+                    </div>
+                    <span class="country-badge peru">🇵🇪 PERU</span>
+                    <div class="location">Lima</div>
+                    <div class="activities">
+                        <div class="activity-item">Arrive Lima 05:25</div>
+                        <div class="activity-item">Transfer to accommodation</div>
+                        <div class="activity-item">Rest & light explore</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">3</span>
+                        <div>
+                            <div class="day-date">Jun 29</div>
+                            <div class="day-weekday">Monday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Lima</div>
+                    <div class="activities">
+                        <div class="activity-item">Miraflores district</div>
+                        <div class="activity-item">Barranco coastal walk</div>
+                        <div class="activity-item">Parks & sunset</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">4</span>
+                        <div>
+                            <div class="day-date">Jun 30</div>
+                            <div class="day-weekday">Tuesday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Lima</div>
+                    <div class="activities">
+                        <div class="activity-item">Historic centre</div>
+                        <div class="activity-item">Plaza de Armas</div>
+                        <div class="activity-item">San Francisco</div>
+                        <div class="activity-item">🍽️ Ceviche & Pisco Sour</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">5</span>
+                        <div>
+                            <div class="day-date">Jul 1</div>
+                            <div class="day-weekday">Wednesday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Lima → Paracas</div>
+                    <div class="activities">
+                        <div class="activity-item">Museums & markets</div>
+                        <div class="activity-item">Evening bus to Paracas</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">6</span>
+                        <div>
+                            <div class="day-date">Jul 2</div>
+                            <div class="day-weekday">Thursday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Paracas → Huacachina</div>
+                    <div class="activities">
+                        <div class="activity-item">🦭 Ballestas Islands tour</div>
+                        <div class="activity-item">Travel to Huacachina</div>
+                        <div class="activity-item">🏜️ Dune buggies & sandboarding</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">7</span>
+                        <div>
+                            <div class="day-date">Jul 3</div>
+                            <div class="day-weekday">Friday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Huacachina → Arequipa</div>
+                    <div class="activities">
+                        <div class="activity-item">Morning at oasis</div>
+                        <div class="activity-item">Overnight bus to Arequipa</div>
+                        <div class="activity-item">(Optional: Nazca Lines)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Week 2 -->
+        <div class="week">
+            <div class="week-header">📅 Week 2: July 4 – July 10</div>
+            <div class="week-grid">
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">8</span>
+                        <div>
+                            <div class="day-date">Jul 4</div>
+                            <div class="day-weekday">Saturday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Arequipa</div>
+                    <div class="activities">
+                        <div class="activity-item">Plaza de Armas</div>
+                        <div class="activity-item">⛪ Santa Catalina Monastery</div>
+                        <div class="activity-item">Yanahuara viewpoint</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">9</span>
+                        <div>
+                            <div class="day-date">Jul 5</div>
+                            <div class="day-weekday">Sunday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Arequipa → Cusco</div>
+                    <div class="activities">
+                        <div class="activity-item">✈️ Flight to Cusco</div>
+                        <div class="activity-item">Light city walk</div>
+                        <div class="activity-item">⛰️ Acclimatize to altitude</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">10</span>
+                        <div>
+                            <div class="day-date">Jul 6</div>
+                            <div class="day-weekday">Monday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Sacred Valley</div>
+                    <div class="activities">
+                        <div class="activity-item">🏛️ Pisac ruins & market</div>
+                        <div class="activity-item">Ollantaytambo fortress</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">11</span>
+                        <div>
+                            <div class="day-date">Jul 7</div>
+                            <div class="day-weekday">Tuesday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Sacred Valley</div>
+                    <div class="activities">
+                        <div class="activity-item">🌀 Moray terraces</div>
+                        <div class="activity-item">🧂 Maras salt mines</div>
+                        <div class="activity-item">Chinchero</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">12</span>
+                        <div>
+                            <div class="day-date">Jul 8</div>
+                            <div class="day-weekday">Wednesday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Cusco</div>
+                    <div class="activities">
+                        <div class="activity-item"><span class="highlight">🌈 Rainbow Mountain!</span></div>
+                        <div class="activity-item">High altitude day trip</div>
+                        <div class="activity-item">Trek briefing evening</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">13</span>
+                        <div>
+                            <div class="day-date">Jul 9</div>
+                            <div class="day-weekday">Thursday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Salkantay Trek</div>
+                    <div class="activities">
+                        <div class="activity-item"><span class="highlight">🥾 Day 1 of Trek</span></div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">14</span>
+                        <div>
+                            <div class="day-date">Jul 10</div>
+                            <div class="day-weekday">Friday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Salkantay Trek</div>
+                    <div class="activities">
+                        <div class="activity-item"><span class="highlight">🥾 Day 2 of Trek</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Week 3 -->
+        <div class="week">
+            <div class="week-header">📅 Week 3: July 11 – July 17</div>
+            <div class="week-grid">
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">15</span>
+                        <div>
+                            <div class="day-date">Jul 11</div>
+                            <div class="day-weekday">Saturday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Salkantay Trek</div>
+                    <div class="activities">
+                        <div class="activity-item"><span class="highlight">🥾 Day 3 of Trek</span></div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">16</span>
+                        <div>
+                            <div class="day-date">Jul 12</div>
+                            <div class="day-weekday">Sunday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Salkantay Trek</div>
+                    <div class="activities">
+                        <div class="activity-item"><span class="highlight">🥾 Day 4 of Trek</span></div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">17</span>
+                        <div>
+                            <div class="day-date">Jul 13</div>
+                            <div class="day-weekday">Monday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Machu Picchu!</div>
+                    <div class="activities">
+                        <div class="activity-item"><span class="highlight">🏛️ MACHU PICCHU!</span></div>
+                        <div class="activity-item">Early morning entry</div>
+                        <div class="activity-item">Return to Cusco</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">18</span>
+                        <div>
+                            <div class="day-date">Jul 14</div>
+                            <div class="day-weekday">Tuesday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Cusco</div>
+                    <div class="activities">
+                        <div class="activity-item">😴 Rest & recovery</div>
+                        <div class="activity-item">Laundry</div>
+                        <div class="activity-item">Café hopping</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">19</span>
+                        <div>
+                            <div class="day-date">Jul 15</div>
+                            <div class="day-weekday">Wednesday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Amazon Jungle</div>
+                    <div class="activities">
+                        <div class="activity-item">✈️ Fly to Puerto Maldonado</div>
+                        <div class="activity-item">🌴 Amazon lodge check-in</div>
+                        <div class="activity-item">🦜 Night wildlife walk</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">20</span>
+                        <div>
+                            <div class="day-date">Jul 16</div>
+                            <div class="day-weekday">Thursday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Amazon Jungle</div>
+                    <div class="activities">
+                        <div class="activity-item">🚣 Boat trips</div>
+                        <div class="activity-item">🌲 Canopy tower</div>
+                        <div class="activity-item">Return to Cusco</div>
+                    </div>
+                </div>
+                
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">21</span>
+                        <div>
+                            <div class="day-date">Jul 17</div>
+                            <div class="day-weekday">Friday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Cusco → Puno</div>
+                    <div class="activities">
+                        <div class="activity-item">🚌 Scenic bus to Puno</div>
+                        <div class="activity-item">Lake Titicaca</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Week 4 -->
+        <div class="week">
+            <div class="week-header">📅 Week 4: July 18 – July 24</div>
+            <div class="week-grid">
+                <div class="day-card peru">
+                    <div class="day-number">
+                        <span class="day-num">22</span>
+                        <div>
+                            <div class="day-date">Jul 18</div>
+                            <div class="day-weekday">Saturday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇵🇪 Lake Titicaca</div>
+                    <div class="activities">
+                        <div class="activity-item">🏝️ Uros floating islands</div>
+                        <div class="activity-item">Taquile or Amantaní</div>
+                    </div>
+                </div>
+                
+                <div class="day-card bolivia">
+                    <div class="day-number">
+                        <span class="day-num">23</span>
+                        <div>
+                            <div class="day-date">Jul 19</div>
+                            <div class="day-weekday">Sunday</div>
+                        </div>
+                    </div>
+                    <span class="country-badge bolivia">🇧🇴 BOLIVIA</span>
+                    <div class="location">Copacabana</div>
+                    <div class="activities">
+                        <div class="activity-item">🛂 Border crossing</div>
+                        <div class="activity-item">⛪ Explore Copacabana</div>
+                        <div class="activity-item">🌅 Cerro Calvario sunset</div>
+                    </div>
+                </div>
+                
+                <div class="day-card bolivia">
+                    <div class="day-number">
+                        <span class="day-num">24</span>
+                        <div>
+                            <div class="day-date">Jul 20</div>
+                            <div class="day-weekday">Monday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇧🇴 Isla del Sol</div>
+                    <div class="activities">
+                        <div class="activity-item">🚤 Boat to island</div>
+                        <div class="activity-item">🏛️ Inca ruins hike</div>
+                        <div class="activity-item">Stunning lake views</div>
+                    </div>
+                </div>
+                
+                <div class="day-card bolivia">
+                    <div class="day-number">
+                        <span class="day-num">25</span>
+                        <div>
+                            <div class="day-date">Jul 21</div>
+                            <div class="day-weekday">Tuesday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇧🇴 La Paz</div>
+                    <div class="activities">
+                        <div class="activity-item">🚌 Travel to La Paz</div>
+                        <div class="activity-item">🚡 Teleférico rides</div>
+                        <div class="activity-item">City viewpoints</div>
+                    </div>
+                </div>
+                
+                <div class="day-card bolivia">
+                    <div class="day-number">
+                        <span class="day-num">26</span>
+                        <div>
+                            <div class="day-date">Jul 22</div>
+                            <div class="day-weekday">Wednesday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇧🇴 La Paz</div>
+                    <div class="activities">
+                        <div class="activity-item"><span class="highlight">🚴 DEATH ROAD!</span></div>
+                        <div class="activity-item">64km downhill bike</div>
+                        <div class="activity-item">🍽️ Celebration dinner</div>
+                    </div>
+                </div>
+                
+                <div class="day-card bolivia">
+                    <div class="day-number">
+                        <span class="day-num">27</span>
+                        <div>
+                            <div class="day-date">Jul 23</div>
+                            <div class="day-weekday">Thursday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇧🇴 La Paz → Sucre</div>
+                    <div class="activities">
+                        <div class="activity-item">🧙 Witches' Market</div>
+                        <div class="activity-item">🌙 Valle de la Luna</div>
+                        <div class="activity-item">✈️ Fly to Sucre</div>
+                    </div>
+                </div>
+                
+                <div class="day-card bolivia">
+                    <div class="day-number">
+                        <span class="day-num">28</span>
+                        <div>
+                            <div class="day-date">Jul 24</div>
+                            <div class="day-weekday">Friday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇧🇴 Sucre</div>
+                    <div class="activities">
+                        <div class="activity-item">🏛️ Historic centre</div>
+                        <div class="activity-item">🍫 Chocolate museum</div>
+                        <div class="activity-item">Colonial architecture</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Week 5 -->
+        <div class="week">
+            <div class="week-header">📅 Week 5: July 25 – July 31</div>
+            <div class="week-grid">
+                <div class="day-card bolivia">
+                    <div class="day-number">
+                        <span class="day-num">29</span>
+                        <div>
+                            <div class="day-date">Jul 25</div>
+                            <div class="day-weekday">Saturday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇧🇴 Sucre → Potosí → Uyuni</div>
+                    <div class="activities">
+                        <div class="activity-item">🚌 Bus to Potosí</div>
+                        <div class="activity-item">⛏️ Mine tour (Cerro Rico)</div>
+                        <div class="activity-item">Overnight bus to Uyuni</div>
+                    </div>
+                </div>
+                
+                <div class="day-card bolivia">
+                    <div class="day-number">
+                        <span class="day-num">30</span>
+                        <div>
+                            <div class="day-date">Jul 26</div>
+                            <div class="day-weekday">Sunday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇧🇴 Salar de Uyuni</div>
+                    <div class="activities">
+                        <div class="activity-item"><span class="highlight">🧂 SALT FLATS!</span></div>
+                        <div class="activity-item">🚂 Train cemetery</div>
+                        <div class="activity-item">📸 Perspective photos</div>
+                        <div class="activity-item">🌟 Stargazing</div>
+                    </div>
+                </div>
+                
+                <div class="day-card bolivia">
+                    <div class="day-number">
+                        <span class="day-num">31</span>
+                        <div>
+                            <div class="day-date">Jul 27</div>
+                            <div class="day-weekday">Monday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇧🇴 Eduardo Avaroa Reserve</div>
+                    <div class="activities">
+                        <div class="activity-item">🔴 Laguna Colorada</div>
+                        <div class="activity-item">🦩 Flamingos</div>
+                        <div class="activity-item">Rock formations</div>
+                    </div>
+                </div>
+                
+                <div class="day-card chile">
+                    <div class="day-number">
+                        <span class="day-num">32</span>
+                        <div>
+                            <div class="day-date">Jul 28</div>
+                            <div class="day-weekday">Tuesday</div>
+                        </div>
+                    </div>
+                    <span class="country-badge chile">🇨🇱 CHILE</span>
+                    <div class="location">→ San Pedro de Atacama</div>
+                    <div class="activities">
+                        <div class="activity-item">💨 Sol de Mañana geysers</div>
+                        <div class="activity-item">🟢 Laguna Verde</div>
+                        <div class="activity-item">🛂 Border crossing</div>
+                        <div class="activity-item">Arrive San Pedro</div>
+                    </div>
+                </div>
+                
+                <div class="day-card chile">
+                    <div class="day-number">
+                        <span class="day-num">33</span>
+                        <div>
+                            <div class="day-date">Jul 29</div>
+                            <div class="day-weekday">Wednesday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇨🇱 San Pedro de Atacama</div>
+                    <div class="activities">
+                        <div class="activity-item">😴 Sleep in, recover</div>
+                        <div class="activity-item">Explore town</div>
+                        <div class="activity-item"><span class="highlight">🌙 Valle de la Luna</span></div>
+                    </div>
+                </div>
+                
+                <div class="day-card chile">
+                    <div class="day-number">
+                        <span class="day-num">34</span>
+                        <div>
+                            <div class="day-date">Jul 30</div>
+                            <div class="day-weekday">Thursday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇨🇱 San Pedro de Atacama</div>
+                    <div class="activities">
+                        <div class="activity-item">🏔️ Altiplanic lagoons</div>
+                        <div class="activity-item">Atacama salt flats</div>
+                        <div class="activity-item">🦩 More flamingos!</div>
+                    </div>
+                </div>
+                
+                <div class="day-card chile">
+                    <div class="day-number">
+                        <span class="day-num">35</span>
+                        <div>
+                            <div class="day-date">Jul 31</div>
+                            <div class="day-weekday">Friday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇨🇱 San Pedro de Atacama</div>
+                    <div class="activities">
+                        <div class="activity-item">♨️ Termas de Puritama</div>
+                        <div class="activity-item">Free afternoon</div>
+                        <div class="activity-item"><span class="highlight">⭐ Stargazing tour</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Week 6 -->
+        <div class="week">
+            <div class="week-header">📅 Week 6: August 1 – August 7 (To Be Planned)</div>
+            <div class="week-grid">
+                <div class="day-card empty">
+                    <div class="day-number">
+                        <span class="day-num">36</span>
+                        <div>
+                            <div class="day-date">Aug 1</div>
+                            <div class="day-weekday">Saturday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇨🇱 Chile TBD</div>
+                    <div class="activities">
+                        <div class="activity-item">To be planned...</div>
+                        <div class="activity-item" style="color:#888;">Options: El Tatio geysers, travel to Santiago</div>
+                    </div>
+                </div>
+                
+                <div class="day-card empty">
+                    <div class="day-number">
+                        <span class="day-num">37</span>
+                        <div>
+                            <div class="day-date">Aug 2</div>
+                            <div class="day-weekday">Sunday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇨🇱 Chile TBD</div>
+                    <div class="activities">
+                        <div class="activity-item">To be planned...</div>
+                    </div>
+                </div>
+                
+                <div class="day-card empty">
+                    <div class="day-number">
+                        <span class="day-num">38</span>
+                        <div>
+                            <div class="day-date">Aug 3</div>
+                            <div class="day-weekday">Monday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇨🇱 Chile TBD</div>
+                    <div class="activities">
+                        <div class="activity-item">To be planned...</div>
+                        <div class="activity-item" style="color:#888;">Options: Santiago, Valparaíso</div>
+                    </div>
+                </div>
+                
+                <div class="day-card empty">
+                    <div class="day-number">
+                        <span class="day-num">39</span>
+                        <div>
+                            <div class="day-date">Aug 4</div>
+                            <div class="day-weekday">Tuesday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇨🇱 Chile TBD</div>
+                    <div class="activities">
+                        <div class="activity-item">To be planned...</div>
+                    </div>
+                </div>
+                
+                <div class="day-card empty">
+                    <div class="day-number">
+                        <span class="day-num">40</span>
+                        <div>
+                            <div class="day-date">Aug 5</div>
+                            <div class="day-weekday">Wednesday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇨🇱 Chile TBD</div>
+                    <div class="activities">
+                        <div class="activity-item">To be planned...</div>
+                        <div class="activity-item" style="color:#888;">Options: Wine valleys</div>
+                    </div>
+                </div>
+                
+                <div class="day-card empty">
+                    <div class="day-number">
+                        <span class="day-num">41</span>
+                        <div>
+                            <div class="day-date">Aug 6</div>
+                            <div class="day-weekday">Thursday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇨🇱 Chile TBD</div>
+                    <div class="activities">
+                        <div class="activity-item">To be planned...</div>
+                    </div>
+                </div>
+                
+                <div class="day-card empty">
+                    <div class="day-number">
+                        <span class="day-num">42</span>
+                        <div>
+                            <div class="day-date">Aug 7</div>
+                            <div class="day-weekday">Friday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇨🇱 Chile TBD</div>
+                    <div class="activities">
+                        <div class="activity-item">To be planned...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Week 7 -->
+        <div class="week">
+            <div class="week-header">📅 Week 7: August 8 – August 10 (Final Days)</div>
+            <div class="week-grid">
+                <div class="day-card empty">
+                    <div class="day-number">
+                        <span class="day-num">43</span>
+                        <div>
+                            <div class="day-date">Aug 8</div>
+                            <div class="day-weekday">Saturday</div>
+                        </div>
+                    </div>
+                    <div class="location">🇨🇱 Chile TBD</div>
+                    <div class="activities">
+                        <div class="activity-item">To be planned...</div>
+                        <div class="activity-item" style="color:#888;">Last full day</div>
+                    </div>
+                </div>
+                
+                <div class="day-card travel">
+                    <div class="day-number">
+                        <span class="day-num">44</span>
+                        <div>
+                            <div class="day-date">Aug 9</div>
+                            <div class="day-weekday">Sunday</div>
+                        </div>
+                    </div>
+                    <div class="location">✈️ Santiago → Dublin</div>
+                    <div class="activities">
+                        <div class="activity-item">Transfer to airport</div>
+                        <div class="activity-item">✈️ Depart 11:40</div>
+                        <div class="activity-item">Iberia via Madrid</div>
+                        <div class="activity-item">Overnight flight</div>
+                    </div>
+                </div>
+                
+                <div class="day-card travel">
+                    <div class="day-number">
+                        <span class="day-num">45</span>
+                        <div>
+                            <div class="day-date">Aug 10</div>
+                            <div class="day-weekday">Monday</div>
+                        </div>
+                    </div>
+                    <div class="location">🏠 Home</div>
+                    <div class="activities">
+                        <div class="activity-item">Arrive Dublin 09:05</div>
+                        <div class="activity-item">🎉 Trip complete!</div>
+                        <div class="activity-item">Rest & memories</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px; color: #666; font-size: 0.9rem;">
+        <p>✨ 45 Days • 3 Countries • Countless Adventures ✨</p>
+        <p style="margin-top: 10px;">Adam & Emma • Summer 2026</p>
+    </div>
+</body>
+</html>
