@@ -121,7 +121,7 @@
 | Time | Activity | Notes |
 |------|----------|-------|
 | Morning / Afternoon | Lima museums, markets or free time | Last full day in Lima |
-| Evening | Bus Lima → Paracas | Book in advance (e.g. Cruz del Sur) |
+| Evening | Peru Hop bus Lima → Paracas | Reserve Peru Hop seat in advance |
 
 ---
 
@@ -132,7 +132,7 @@
 | Time | Activity | Notes |
 |------|----------|-------|
 | Morning | Paracas: Ballestas Islands boat tour | Wildlife (sea lions, birds, penguins if in season) |
-| Afternoon / Evening | Travel Paracas → Huacachina, dune buggies & sandboarding at sunset | Overnight in Huacachina oasis |
+| Afternoon / Evening | Peru Hop bus Paracas → Huacachina, dune buggies & sandboarding at sunset | Overnight in Huacachina oasis |
 
 ---
 
@@ -143,30 +143,33 @@
 | Time | Activity | Notes |
 |------|----------|-------|
 | Morning | Free time in Huacachina (short hike or relax by the oasis) | Optional extra sandboarding |
-| Afternoon / Night | Travel Huacachina / Ica → Arequipa (long or overnight bus, optional Nazca stop) | Book comfortable bus; consider Nazca flight en route |
+| Afternoon / Night | Peru Hop bus Huacachina / Ica → Arequipa (long or overnight, optional Nazca stop) | Reserve Peru Hop leg; consider Nazca flight en route |
 
 ---
 
 ### Week 2: July 4 – July 10
 
 #### Day 8 - Saturday, July 4
-**Location:**  
-**Accommodation:**  
+**Location:** Arequipa → Colca Canyon (Chivay/Yanque)  
+**Accommodation:** Guesthouse in Colca Valley  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| All day | Arequipa: Plaza de Armas, Santa Catalina Monastery, Yanahuara viewpoint | Easy-paced explore, enjoy local food |
+| Morning | Arequipa: Plaza de Armas, Santa Catalina Monastery | Easy-paced explore, enjoy local food |
+| Afternoon | Drive Arequipa → Colca (via viewpoints & high pass) | Join 2-day Colca tour, reach Chivay/Yanque |
+| Evening | Hot springs & relax in Colca Valley | Early night before condors next day |
 
 ---
 
 #### Day 9 - Sunday, July 5
-**Location:**  
-**Accommodation:**  
+**Location:** Colca Canyon → Arequipa → Cusco  
+**Accommodation:** Cusco (arrive late)
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | Travel Arequipa → Cusco (flight or bus) | Aim for a daytime flight if possible |
-| Afternoon / Evening | Light Cusco city walk (main square, San Blas, cafés) | Take it slow for altitude acclimatization |
+| Early morning | Cruz del Cóndor viewpoint | Watch Andean condors soaring over the canyon |
+| Late morning | Colca villages & viewpoints | Short walks, photo stops, lunch en route |
+| Afternoon / Evening | Return to Arequipa, Peru Hop bus/transport to Cusco | Long travel, arrive Cusco late and go straight to accommodation |
 
 ---
 
@@ -264,42 +267,54 @@
 ---
 
 #### Day 19 - Wednesday, July 15
-**Location:**  
-**Accommodation:**  
+**Location:** Amazon Jungle (near Puerto Maldonado)  
+**Accommodation:** Amazon lodge  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | Fly Cusco → Puerto Maldonado, boat transfer to Amazon lodge | Start 2-day Amazon jungle stay |
+| Morning | Fly Cusco → Puerto Maldonado, boat transfer to Amazon lodge | Start Amazon jungle stay |
 | Afternoon / Night | Jungle walks and night wildlife excursion | Guided activities organised by the lodge |
 
 ---
 
 #### Day 20 - Thursday, July 16
-**Location:**  
-**Accommodation:**  
+**Location:** Amazon Jungle  
+**Accommodation:** Amazon lodge  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning / Afternoon | Amazon activities (boat trips, canopy tower, wildlife watching) | Second day in the jungle |
-| Evening | Return boat and transfer back to Cusco | Overnight in Cusco |
+| Morning / Afternoon | Amazon activities (boat trips, canopy tower, wildlife watching) | Full relaxed day in the jungle |
+| Evening | Sunset by the river, chill in hammock or by lodge bar | Early night, enjoy the sounds of the rainforest |
 
 ---
 
 #### Day 21 - Friday, July 17
-**Location:**  
-**Accommodation:**  
+**Location:** Amazon Jungle → Cusco  
+**Accommodation:** Cusco  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning / Evening | Bus Cusco → Puno (Lake Titicaca) | Scenic route, arrive Puno and settle in |
+| Morning | Final short jungle activity (lake or walk) | Last chance for wildlife spotting |
+| Midday | Boat back to Puerto Maldonado, fly to Cusco | Travel back to the Andes |
+| Evening | Easy dinner in Cusco, early night | Get ready for Lake Titicaca leg |
 
 ---
 
 ### Week 4: July 18 – July 24
 
 #### Day 22 - Saturday, July 18
-**Location:**  
-**Accommodation:**  
+**Location:** Cusco → Puno (Lake Titicaca)  
+**Accommodation:** Puno  
+
+| Time | Activity | Notes |
+|------|----------|-------|
+| Morning / Evening | Peru Hop bus Cusco → Puno (Lake Titicaca) | Scenic route across the altiplano, arrive Puno and settle in |
+
+---
+
+#### Day 23 - Sunday, July 19
+**Location:** Puno / Lake Titicaca, Peru  
+**Accommodation:** Puno or homestay  
 
 | Time | Activity | Notes |
 |------|----------|-------|
@@ -307,20 +322,20 @@
 
 ---
 
-#### Day 23 - Sunday, July 19
+#### Day 24 - Monday, July 20
 **Location:** Copacabana, Bolivia  
-**Accommodation:**  
+**Accommodation:** Copacabana  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | Cross border Puno → Copacabana | ~3hr, border crossing at Kasani/Yunguyo |
+| Morning | Peru Hop bus Puno → Copacabana, border formalities en route | ~3hr, border crossing at Kasani/Yunguyo |
 | Afternoon | Explore Copacabana: waterfront, Cerro Calvario sunset hike | Relaxed first day in Bolivia |
 
 ---
 
-#### Day 24 - Monday, July 20
+#### Day 25 - Tuesday, July 21
 **Location:** Isla del Sol, Bolivia  
-**Accommodation:**  
+**Accommodation:** Isla del Sol or Copacabana  
 
 | Time | Activity | Notes |
 |------|----------|-------|
@@ -329,21 +344,21 @@
 
 ---
 
-#### Day 25 - Tuesday, July 21
+#### Day 26 - Wednesday, July 22
 **Location:** La Paz, Bolivia  
-**Accommodation:**  
+**Accommodation:** La Paz  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | Travel Copacabana → La Paz | ~4hr by bus/shared transport |
+| Morning | Peru Hop bus Copacabana → La Paz | ~4hr, scenic drive along the lake |
 | Afternoon | Teleférico ride (cable car network), city viewpoints | Amazing views over the dramatic city |
 | Evening | Settle in, explore neighbourhood | Stay near the Witches' Market area |
 
 ---
 
-#### Day 26 - Wednesday, July 22
+#### Day 27 - Thursday, July 23
 **Location:** La Paz, Bolivia  
-**Accommodation:**  
+**Accommodation:** La Paz  
 
 | Time | Activity | Notes |
 |------|----------|-------|
@@ -352,21 +367,24 @@
 
 ---
 
-#### Day 27 - Thursday, July 23
+#### Day 28 - Friday, July 24
 **Location:** La Paz → Sucre  
-**Accommodation:**  
+**Accommodation:** Sucre  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | Witches' Market, historic centre walk | Llama foetuses, potions, crafts |
-| Midday | Valle de la Luna (Moon Valley) | ~30min from centre, unique rock formations |
+| Morning | Slow start, coffee and light city wandering | Recovery morning after Death Road |
+| Late morning / Early afternoon | Witches' Market & historic centre walk | Llama foetuses, potions, crafts |
+| Mid / Late afternoon | Valle de la Luna (Moon Valley) | ~30min from centre, unique rock formations |
 | Evening | Fly La Paz → Sucre (~1hr) | Book Boliviana/Amaszonas, arrive and settle in |
 
 ---
 
-#### Day 28 - Friday, July 24
+### Week 5: July 25 – July 31
+
+#### Day 29 - Saturday, July 25
 **Location:** Sucre, Bolivia  
-**Accommodation:**  
+**Accommodation:** Sucre  
 
 | Time | Activity | Notes |
 |------|----------|-------|
@@ -376,9 +394,7 @@
 
 ---
 
-### Week 5: July 25 – July 31
-
-#### Day 29 - Saturday, July 25
+#### Day 30 - Sunday, July 26
 **Location:** Sucre → Potosí → Uyuni  
 **Accommodation:** Overnight bus or salt hotel  
 
@@ -390,7 +406,7 @@
 
 ---
 
-#### Day 30 - Sunday, July 26
+#### Day 31 - Monday, July 27
 **Location:** Salar de Uyuni  
 **Accommodation:** Salt hotel or basic refuge  
 
@@ -401,7 +417,7 @@
 
 ---
 
-#### Day 31 - Monday, July 27
+#### Day 32 - Tuesday, July 28
 **Location:** Eduardo Avaroa Reserve  
 **Accommodation:** Basic refuge near lagunas  
 
@@ -412,8 +428,8 @@
 
 ---
 
-#### Day 32 - Tuesday, July 28
-**Location:** Eduardo Avaroa → Chile border  
+#### Day 33 - Wednesday, July 29
+**Location:** Eduardo Avaroa → Chile border → San Pedro de Atacama  
 **Accommodation:** San Pedro de Atacama, Chile  
 
 | Time | Activity | Notes |
@@ -425,9 +441,9 @@
 
 ---
 
-#### Day 33 - Wednesday, July 29
+#### Day 34 - Thursday, July 30
 **Location:** San Pedro de Atacama, Chile  
-**Accommodation:**  
+**Accommodation:** San Pedro de Atacama  
 
 | Time | Activity | Notes |
 |------|----------|-------|
@@ -437,26 +453,14 @@
 
 ---
 
-#### Day 34 - Thursday, July 30
+#### Day 35 - Friday, July 31
 **Location:** San Pedro de Atacama, Chile  
-**Accommodation:**  
+**Accommodation:** San Pedro de Atacama  
 
 | Time | Activity | Notes |
 |------|----------|-------|
 | All day | Altiplanic lagoons & Atacama salt flats tour | Lagunas Miscanti & Miñiques, Salar de Atacama, flamingos |
 | Evening | Relax in town, dinner | Try Chilean food & pisco sours |
-
----
-
-#### Day 35 - Friday, July 31
-**Location:** San Pedro de Atacama, Chile  
-**Accommodation:**  
-
-| Time | Activity | Notes |
-|------|----------|-------|
-| Morning | Termas de Puritama (hot springs) or free morning | Soak in natural thermal pools in a desert canyon |
-| Afternoon | Rest, explore town, pack for next leg | Last afternoon in San Pedro |
-| Night | Stargazing tour | Atacama has the clearest skies on Earth – unmissable! |
 
 ---
 
