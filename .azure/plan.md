@@ -1,10 +1,10 @@
 # Azure Deployment Plan — Travel Itinerary
 
-## Status: Ready for Deployment
+## Status: Deployed — Svelte Refactor In Progress
 
 ## Architecture
-- **Azure Static Web Apps** (Free) — hosts HTML + API functions
-- **Azure Blob Storage** (Standard LRS) — stores attachment files
+- **Azure Static Web Apps** (Free) — hosts Svelte frontend + API functions
+- **Azure Blob Storage** — stores attachment files + itinerary JSON data
 - **GitHub Actions** — CI/CD pipeline
 
 ## Resources Created by Bicep
@@ -12,12 +12,20 @@
 |----------|------|-----|
 | Storage Account | Microsoft.Storage/storageAccounts | Standard_LRS |
 | Blob Container | `attachments` | Private |
+| Blob Container | `data` | Private (itinerary.json) |
 | Static Web App | Microsoft.Web/staticSites | Free |
 
-## CI/CD Pipeline
-- **Trigger:** Push to `main` branch
-- **Job 1 (infra):** Deploys Bicep → creates/updates Azure resources
-- **Job 2 (deploy):** Deploys HTML + API code to Static Web Apps
+## Svelte Refactor Phases
+See `.instructions.md` for full details.
+
+| Phase | Description | Status |
+|-------|-------------|--------|
+| 1 | Scaffold Svelte + extract data + API endpoints | NOT STARTED |
+| 2 | Core rendering (view mode) | NOT STARTED |
+| 3 | Edit mode + inline editing + auto-save | NOT STARTED |
+| 4 | Drag & drop with country boundary confirmation | NOT STARTED |
+| 5 | Port attachment modal to Svelte | NOT STARTED |
+| 6 | Polish, loading states, error handling | NOT STARTED |
 
 ## One-Time Setup Required
 
