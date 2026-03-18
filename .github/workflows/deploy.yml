@@ -1,0 +1,68 @@
+name: Deploy Travel Itinerary
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  RESOURCE_GROUP: rg-travel-itinerary
+  LOCATION: westeurope
+
+jobs:
+  # ---- Job 1: Deploy infrastructure with Bicep ----
+  infra:
+    name: Deploy Infrastructure
+    runs-on: ubuntu-latest
+    outputs:
+      swa-name: ${{ steps.deploy.outputs.staticWebAppName }}
+      swa-token: ${{ steps.deploy.outputs.staticWebAppDeploymentToken }}
+      swa-url: ${{ steps.deploy.outputs.staticWebAppUrl }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Create Resource Group
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            az group create --name ${{ env.RESOURCE_GROUP }} --location ${{ env.LOCATION }}
+
+      - name: Deploy Bicep
+        id: deploy
+        uses: azure/arm-deploy@v2
+        with:
+          resourceGroupName: ${{ env.RESOURCE_GROUP }}
+          template: ./infra/main.bicep
+          parameters: location=${{ env.LOCATION }}
+
+  # ---- Job 2: Deploy app code to Static Web Apps ----
+  deploy:
+    name: Deploy App
+    needs: infra
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install API dependencies
+        run: cd api && npm ci
+
+      - name: Deploy to Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ needs.infra.outputs.swa-token }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_location: .
+          output_location: .
+          api_location: api

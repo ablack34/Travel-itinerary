@@ -193,6 +193,25 @@
             font-weight: 500;
         }
         
+        .accommodation {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.75rem;
+        }
+        
+        .accommodation a {
+            color: #f39c12;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .accommodation a:hover {
+            text-decoration: underline;
+        }
+        
         .country-badge {
             display: inline-block;
             padding: 2px 8px;
@@ -256,6 +275,232 @@
         .timeline-segment.peru { background: linear-gradient(90deg, #e74c3c, #c0392b); }
         .timeline-segment.bolivia { background: linear-gradient(90deg, #f39c12, #d35400); }
         .timeline-segment.chile { background: linear-gradient(90deg, #3498db, #2980b9); }
+        
+        /* Attachment styles */
+        .attach-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #aaa;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, color 0.2s;
+            z-index: 2;
+        }
+        
+        .attach-btn:hover {
+            background: rgba(243, 156, 18, 0.3);
+            color: #f39c12;
+        }
+        
+        .attach-btn.has-files {
+            background: rgba(243, 156, 18, 0.25);
+            color: #f39c12;
+        }
+        
+        .attach-badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: #e74c3c;
+            color: #fff;
+            font-size: 0.6rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .attachments-list {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .attachment-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 0.75rem;
+        }
+        
+        .attachment-item a {
+            color: #3498db;
+            text-decoration: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 140px;
+        }
+        
+        .attachment-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .attachment-remove {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 0.85rem;
+            padding: 0 4px;
+            opacity: 0.7;
+        }
+        
+        .attachment-remove:hover {
+            opacity: 1;
+        }
+        
+        /* Modal overlay for attachment management */
+        .attach-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .attach-modal-overlay.active {
+            display: flex;
+        }
+        
+        .attach-modal {
+            background: #1e2a3a;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .attach-modal h3 {
+            margin-bottom: 15px;
+            color: #f39c12;
+        }
+        
+        .attach-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #aaa;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .attach-modal-close:hover {
+            color: #fff;
+        }
+        
+        .attach-dropzone {
+            border: 2px dashed rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        
+        .attach-dropzone:hover, .attach-dropzone.dragover {
+            border-color: #f39c12;
+            background: rgba(243,156,18,0.05);
+        }
+        
+        .attach-dropzone input {
+            display: none;
+        }
+        
+        .modal-file-list {
+            list-style: none;
+        }
+        
+        .modal-file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .modal-file-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            overflow: hidden;
+            flex: 1;
+        }
+        
+        .modal-file-icon {
+            font-size: 1.3rem;
+        }
+        
+        .modal-file-name {
+            font-size: 0.85rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .modal-file-size {
+            font-size: 0.7rem;
+            color: #888;
+        }
+        
+        .modal-file-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .modal-file-actions button {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #ccc;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .modal-file-actions button:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .modal-file-actions .delete-btn:hover {
+            background: rgba(231,76,60,0.3);
+            color: #e74c3c;
+        }
+        
+        .no-attachments {
+            color: #666;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.85rem;
+        }
     </style>
 </head>
 <body>
@@ -357,6 +602,9 @@
                         <div class="activity-item">Transfer to accommodation</div>
                         <div class="activity-item">Rest & light explore</div>
                     </div>
+                    <div class="accommodation">
+                        <a href="https://www.hostelworld.com/pwa/hosteldetails.php/Alpes-Lima-Kennedy-Park/Lima/277492" target="_blank">🏨 Alpes Lima Kennedy Park</a>
+                    </div>
                 </div>
                 
                 <div class="day-card peru">
@@ -372,6 +620,9 @@
                         <div class="activity-item">Miraflores & Barranco</div>
                         <div class="activity-item">Historic centre & Plaza de Armas</div>
                         <div class="activity-item">🍽️ Ceviche & Pisco Sour</div>
+                    </div>
+                    <div class="accommodation">
+                        <a href="https://www.hostelworld.com/pwa/hosteldetails.php/Alpes-Lima-Kennedy-Park/Lima/277492" target="_blank">🏨 Alpes Lima Kennedy Park</a>
                     </div>
                 </div>
                 
@@ -390,6 +641,9 @@
                         <div class="activity-item">Arrive 13:30</div>
                         <div class="activity-item">🌅 15:30 Golden Shadows Trek</div>
                     </div>
+                    <div class="accommodation">
+                        <a href="https://www.hostelworld.com/pwa/hosteldetails.php/Viajero-Paracas-Hostel/Paracas/78671?from=2026-06-30&to=2026-07-01&guests=2&origin=microsite" target="_blank">🏨 Viajero Paracas Hostel</a>
+                    </div>
                 </div>
                 
                 <div class="day-card peru">
@@ -406,6 +660,9 @@
                         <div class="activity-item">🚌 10:00 Peru Hop Stage 2</div>
                         <div class="activity-item">🍷 13:00 Pisco vineyard tour</div>
                         <div class="activity-item">🏜️ 16:00 Dune buggies!</div>
+                    </div>
+                    <div class="accommodation">
+                        <a href="https://www.hostelworld.com/pwa/hosteldetails.php/Viajero-Huacachina-Hostel/Huacachina/321972?from=2026-07-01&to=2026-07-02&guests=2" target="_blank">🏨 Viajero Huacachina Hostel</a>
                     </div>
                 </div>
                 
@@ -1091,5 +1348,283 @@
         <p>✨ 45 Days • 3 Countries • Countless Adventures ✨</p>
         <p style="margin-top: 10px;">Adam & Emma • Summer 2026</p>
     </div>
+
+    <!-- Attachment Modal -->
+    <div class="attach-modal-overlay" id="attachModal">
+        <div class="attach-modal">
+            <button class="attach-modal-close" id="modalClose">&times;</button>
+            <h3 id="modalTitle">📎 Attachments</h3>
+            <div class="attach-dropzone" id="dropzone">
+                <p>📁 Drop files here or click to browse</p>
+                <p style="font-size: 0.75rem; margin-top: 5px;">PDFs, images, emails — max 10MB each</p>
+                <input type="file" id="fileInput" multiple>
+            </div>
+            <ul class="modal-file-list" id="modalFileList"></ul>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+
+        // ---- Azure Blob Storage API ----
+
+        async function getFilesForDay(dayKey) {
+            try {
+                const res = await fetch(`/api/list-files?day=${encodeURIComponent(dayKey)}`);
+                if (!res.ok) throw new Error(res.statusText);
+                const data = await res.json();
+                return data.files || [];
+            } catch (e) {
+                console.error('Failed to list files:', e);
+                return [];
+            }
+        }
+
+        async function uploadFile(dayKey, file) {
+            // Step 1: Get a temporary upload URL from the API
+            const res = await fetch('/api/get-upload-url', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ day: dayKey, fileName: file.name })
+            });
+            if (!res.ok) {
+                const err = await res.json();
+                throw new Error(err.error || 'Failed to get upload URL');
+            }
+            const { uploadUrl } = await res.json();
+
+            // Step 2: Upload directly to Blob Storage using the SAS URL
+            const uploadRes = await fetch(uploadUrl, {
+                method: 'PUT',
+                headers: {
+                    'x-ms-blob-type': 'BlockBlob',
+                    'Content-Type': file.type || 'application/octet-stream'
+                },
+                body: file
+            });
+            if (!uploadRes.ok) throw new Error('Upload failed');
+        }
+
+        async function deleteFile(dayKey, blobPath) {
+            try {
+                await fetch('/api/delete-file', {
+                    method: 'DELETE',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ blobPath })
+                });
+            } catch (e) {
+                console.error('Failed to delete:', e);
+            }
+        }
+
+        async function getAllDayCounts() {
+            // Fetch counts for all days that have the paperclip button
+            const days = Object.keys(cardsByDay);
+            const counts = {};
+            // Batch: fetch all at once in parallel
+            await Promise.all(days.map(async (day) => {
+                try {
+                    const files = await getFilesForDay(day);
+                    if (files.length > 0) counts[day] = files.length;
+                } catch {}
+            }));
+            return counts;
+        }
+
+        // ---- UI helpers ----
+
+        function getDayKey(card) {
+            const dateEl = card.querySelector('.day-date');
+            return dateEl ? dateEl.textContent.trim() : null;
+        }
+
+        function fileIcon(name) {
+            const ext = name.split('.').pop().toLowerCase();
+            if (['pdf'].includes(ext)) return '📄';
+            if (['jpg','jpeg','png','gif','webp'].includes(ext)) return '🖼️';
+            if (['eml','msg'].includes(ext)) return '📧';
+            if (['doc','docx'].includes(ext)) return '📝';
+            return '📎';
+        }
+
+        function formatSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+        }
+
+        function updateBadge(card, count) {
+            const btn = card.querySelector('.attach-btn');
+            if (!btn) return;
+            let badge = btn.querySelector('.attach-badge');
+            if (count > 0) {
+                btn.classList.add('has-files');
+                if (!badge) {
+                    badge = document.createElement('span');
+                    badge.className = 'attach-badge';
+                    btn.appendChild(badge);
+                }
+                badge.textContent = count;
+            } else {
+                btn.classList.remove('has-files');
+                if (badge) badge.remove();
+            }
+        }
+
+        // Build a map of cards by day key
+        const cardsByDay = {};
+
+        // Add attach button to every day card
+        document.querySelectorAll('.day-card').forEach(card => {
+            const btn = document.createElement('button');
+            btn.className = 'attach-btn';
+            btn.title = 'Attach files';
+            btn.innerHTML = '📎';
+            btn.style.position = 'absolute';
+            card.style.position = 'relative';
+            card.appendChild(btn);
+
+            const key = getDayKey(card);
+            if (key) cardsByDay[key] = card;
+
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openModal(card);
+            });
+        });
+
+        // Load initial badge counts
+        getAllDayCounts().then(counts => {
+            for (const [key, count] of Object.entries(counts)) {
+                if (cardsByDay[key]) updateBadge(cardsByDay[key], count);
+            }
+        });
+
+        // ---- Modal logic ----
+
+        const modal = document.getElementById('attachModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalFileList = document.getElementById('modalFileList');
+        const dropzone = document.getElementById('dropzone');
+        const fileInput = document.getElementById('fileInput');
+        let currentCard = null;
+
+        function openModal(card) {
+            currentCard = card;
+            const key = getDayKey(card);
+            const weekday = card.querySelector('.day-weekday');
+            const location = card.querySelector('.location');
+            modalTitle.textContent = '📎 ' + key + (weekday ? ' (' + weekday.textContent + ')' : '') +
+                (location ? ' — ' + location.textContent : '');
+            renderFileList();
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            currentCard = null;
+        }
+
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        async function renderFileList() {
+            if (!currentCard) return;
+            const key = getDayKey(currentCard);
+            modalFileList.innerHTML = '<li class="no-attachments">Loading...</li>';
+
+            const files = await getFilesForDay(key);
+            modalFileList.innerHTML = '';
+
+            if (files.length === 0) {
+                modalFileList.innerHTML = '<li class="no-attachments">No attachments yet</li>';
+                return;
+            }
+
+            files.forEach(file => {
+                const li = document.createElement('li');
+                li.className = 'modal-file-item';
+                const safeName = file.name.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                li.innerHTML = `
+                    <div class="modal-file-info">
+                        <span class="modal-file-icon">${fileIcon(file.name)}</span>
+                        <div>
+                            <div class="modal-file-name">${safeName}</div>
+                            <div class="modal-file-size">${formatSize(file.size)}</div>
+                        </div>
+                    </div>
+                    <div class="modal-file-actions">
+                        <button class="view-btn" title="Open / Download">Open</button>
+                        <button class="delete-btn" title="Remove">✕</button>
+                    </div>
+                `;
+
+                li.querySelector('.view-btn').addEventListener('click', () => {
+                    window.open(file.url, '_blank');
+                });
+
+                li.querySelector('.delete-btn').addEventListener('click', async () => {
+                    await deleteFile(key, file.fullPath);
+                    const updated = await getFilesForDay(key);
+                    updateBadge(currentCard, updated.length);
+                    renderFileList();
+                });
+
+                modalFileList.appendChild(li);
+            });
+        }
+
+        // ---- File input handling ----
+
+        function addFiles(fileList) {
+            if (!currentCard) return;
+            const key = getDayKey(currentCard);
+            const toProcess = Array.from(fileList);
+            let processed = 0;
+
+            toProcess.forEach(async (file) => {
+                if (file.size > MAX_FILE_SIZE) {
+                    alert(file.name + ' is too large (max 10MB).');
+                    processed++;
+                    return;
+                }
+                try {
+                    await uploadFile(key, file);
+                } catch (e) {
+                    alert('Failed to upload ' + file.name + ': ' + e.message);
+                }
+                processed++;
+                if (processed === toProcess.length) {
+                    const updated = await getFilesForDay(key);
+                    updateBadge(currentCard, updated.length);
+                    renderFileList();
+                }
+            });
+        }
+
+        dropzone.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', () => {
+            addFiles(fileInput.files);
+            fileInput.value = '';
+        });
+
+        dropzone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropzone.classList.add('dragover');
+        });
+        dropzone.addEventListener('dragleave', () => {
+            dropzone.classList.remove('dragover');
+        });
+        dropzone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropzone.classList.remove('dragover');
+            addFiles(e.dataTransfer.files);
+        });
+    })();
+    </script>
 </body>
 </html>
