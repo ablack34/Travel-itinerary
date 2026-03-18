@@ -1,13 +1,17 @@
 <script lang="ts">
   import type { Day } from '../lib/types';
+  import SaveIndicator from './SaveIndicator.svelte';
 
   interface Props {
     title: string;
     travelers: string[];
     days: Day[];
+    editing: boolean;
+    saveStatus: 'idle' | 'saving' | 'saved' | 'error';
+    ontoggleedit: () => void;
   }
 
-  let { title, travelers, days }: Props = $props();
+  let { title, travelers, days, editing, saveStatus, ontoggleedit }: Props = $props();
 
   const countryCounts = $derived(() => {
     const counts: Record<string, number> = {};
@@ -38,6 +42,16 @@
   <div class="text-[#aaa] text-lg mt-2">
     <strong>South America Adventure</strong><br />
     {travelers.join(' & ')} • June 27 – August 10, 2026 • {days.length} Days
+  </div>
+  <div class="mt-4 flex items-center justify-center">
+    <button class="edit-toggle-btn" class:editing onclick={ontoggleedit}>
+      {#if editing}
+        ✓ Done
+      {:else}
+        ✏️ Edit
+      {/if}
+    </button>
+    <SaveIndicator status={saveStatus} />
   </div>
 </div>
 

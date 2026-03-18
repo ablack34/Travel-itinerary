@@ -5,9 +5,11 @@
 
   interface Props {
     days: Day[];
+    editing: boolean;
+    onchange: () => void;
   }
 
-  let { days }: Props = $props();
+  let { days, editing, onchange }: Props = $props();
 
   interface Week {
     weekNum: number;
@@ -40,7 +42,7 @@
       <div class="week-header">{week.label}</div>
       <div class="week-grid">
         {#each week.days as { day, index }}
-          <DayCard {day} {index} />
+          <DayCard {day} {index} {editing} {onchange} />
         {/each}
       </div>
     </div>

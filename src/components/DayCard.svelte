@@ -1,26 +1,34 @@
 <script lang="ts">
   import type { Day } from '../lib/types';
   import { getDayDate, formatDate, formatWeekday } from '../lib/dates';
+  import ActivityList from './ActivityList.svelte';
+  import LinksEditor from './LinksEditor.svelte';
 
   interface Props {
     day: Day;
     index: number;
+    editing: boolean;
+    onchange: () => void;
   }
 
-  let { day, index }: Props = $props();
+  let { day, index, editing, onchange }: Props = $props();
 
   const date = $derived(getDayDate(index));
   const dateStr = $derived(formatDate(date));
   const weekday = $derived(formatWeekday(date));
   const dayNum = $derived(index + 1);
 
-  const linkIcon: Record<string, string> = {
-    accommodation: '🏨',
-    tour: '🎫',
-    transport: '🚌',
-    restaurant: '🍽️',
-    other: '🔗',
-  };
+  const countries: Day['country'][] = ['peru', 'bolivia', 'chile', 'travel', 'home'];
+
+  function updateLocation(value: string) {
+    day.location = value;
+    onchange();
+  }
+
+  function updateCountry(value: Day['country']) {
+    day.country = value;
+    onchange();
+  }
 </script>
 
 <div class="day-card day-card-{day.country}">
@@ -32,34 +40,27 @@
     <div class="text-xs text-white/40">Day {dayNum}</div>
   </div>
 
-  <div class="font-bold text-[0.95rem] mb-2 text-white">{day.location}</div>
-
-  {#if day.activities.length > 0}
-    <div class="text-[0.8rem] text-[#ccc] leading-relaxed">
-      {#each day.activities as activity}
-        <div class="activity-item">
-          {#if activity.isHighlight}
-            <span class="highlight">{activity.text}</span>
-          {:else}
-            {activity.text}
-          {/if}
-        </div>
+  {#if editing}
+    <select
+      class="edit-select text-xs mb-2 w-full"
+      value={day.country}
+      onchange={(e) => updateCountry((e.target as HTMLSelectElement).value as Day['country'])}
+    >
+      {#each countries as c}
+        <option value={c}>{c.charAt(0).toUpperCase() + c.slice(1)}</option>
       {/each}
-    </div>
+    </select>
+    <input
+      type="text"
+      class="edit-input w-full font-bold text-[0.95rem] mb-2"
+      value={day.location}
+      placeholder="Location..."
+      oninput={(e) => updateLocation((e.target as HTMLInputElement).value)}
+    />
+  {:else}
+    <div class="font-bold text-[0.95rem] mb-2 text-white">{day.location}</div>
   {/if}
 
-  {#if day.links.length > 0}
-    <div class="mt-2 pt-2 border-t border-white/10 text-xs">
-      {#each day.links as link}
-        <a
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-[#f39c12] hover:underline flex items-center gap-1 mb-1"
-        >
-          {linkIcon[link.type] || '🔗'} {link.label}
-        </a>
-      {/each}
-    </div>
-  {/if}
+  <ActivityList activities={day.activities} {editing} {onchange} />
+  <LinksEditor links={day.links} {editing} {onchange} />
 </div>
