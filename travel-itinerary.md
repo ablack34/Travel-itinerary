@@ -95,55 +95,71 @@
 ---
 
 #### Day 3 - Monday, June 29
-**Location:**  
-**Accommodation:**  
+**Location:** Lima  
+**Accommodation:** Lima  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| All day | Lima: Miraflores & Barranco (coastal walk, parks, sunset) | Easy first full day, adjust to time zone |
+| Morning | Lima: Miraflores & Barranco (coastal walk, parks) | Easy first full day, adjust to time zone |
+| Afternoon | Lima: historic center (Plaza de Armas, San Francisco), food & walking tour | Try ceviche and a pisco sour |
+| Evening | Sunset in Barranco, early night | Early start tomorrow for Peru Hop |
 
 ---
 
 #### Day 4 - Tuesday, June 30
-**Location:**  
-**Accommodation:**  
+**Location:** Lima → Paracas  
+**Accommodation:** Paracas  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| All day | Lima: historic center (Plaza de Armas, San Francisco), food & walking tour | Try ceviche and a pisco sour |
+| 07:00 | Peru Hop Stage 1 (Cultural Route) departs Lima | Pickup from accommodation |
+| 08:45 | Breakfast stop at traditional bread oven | Included on route |
+| 11:30 | Secret slave tunnels stop | Peru Hop hidden gem |
+| 13:30 | Arrive Paracas | Check in, grab lunch |
+| 15:30 | Golden Shadows Trek | MUST-do in Paracas, afternoon trek |
+| Evening | Relax in Paracas, dinner | Early start for Ballestas tomorrow |
 
 ---
 
 #### Day 5 - Wednesday, July 1
-**Location:**  
-**Accommodation:**  
+**Location:** Paracas → Huacachina  
+**Accommodation:** Huacachina  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning / Afternoon | Lima museums, markets or free time | Last full day in Lima |
-| Evening | Peru Hop bus Lima → Paracas | Reserve Peru Hop seat in advance |
+| 07:30 | Ballestas Islands boat tour (~2hrs) | Sea lions, birds, penguins — Peru's mini Galápagos |
+| 10:00 | Peru Hop Stage 2 departs Paracas | Paracas National Reserve stop en route |
+| 13:00 | Pisco vineyard tour | Wine & pisco tasting included on route |
+| 15:00 | Arrive Huacachina | Check into oasis hostel |
+| 16:00 | Dune buggies & sandboarding (~2hrs) | Sunset over the dunes! |
+| Evening | Overnight in Huacachina oasis | Chill by the lagoon |
 
 ---
 
 #### Day 6 - Thursday, July 2
-**Location:**  
-**Accommodation:**  
-
-| Time | Activity | Notes |
-|------|----------|-------|
-| Morning | Paracas: Ballestas Islands boat tour | Wildlife (sea lions, birds, penguins if in season) |
-| Afternoon / Evening | Peru Hop bus Paracas → Huacachina, dune buggies & sandboarding at sunset | Overnight in Huacachina oasis |
-
----
-
-#### Day 7 - Friday, July 3
-**Location:**  
-**Accommodation:**  
+**Location:** Huacachina → overnight bus → Arequipa  
+**Accommodation:** Overnight on bus  
 
 | Time | Activity | Notes |
 |------|----------|-------|
 | Morning | Free time in Huacachina (short hike or relax by the oasis) | Optional extra sandboarding |
-| Afternoon / Night | Peru Hop bus Huacachina / Ica → Arequipa (long or overnight, optional Nazca stop) | Reserve Peru Hop leg; consider Nazca flight en route |
+| 14:00 | Peru Hop Stage 3 departs Huacachina | Long leg with stops |
+| 16:30 | Nazca Viewing Tower stop | See Nazca Lines from the tower (optional flight also available) |
+| 17:30 | Arrive Nazca, dinner snack stop | Quick break |
+| 18:00 | Depart Nazca → overnight to Arequipa | Sleep on the bus |
+
+---
+
+#### Day 7 - Friday, July 3
+**Location:** Arequipa  
+**Accommodation:** Arequipa  
+
+| Time | Activity | Notes |
+|------|----------|-------|
+| 05:30 | Arrive Arequipa | Relax in Peru Hop partner hotel lobby until 8am, luggage storage available |
+| Morning | Arequipa: Plaza de Armas, Santa Catalina Monastery | Easy-paced explore, enjoy local food |
+| Afternoon | Explore San Camilo market, try rocoto relleno & queso helado | Arequipa has some of Peru's best food |
+| Evening | Rooftop dinner with volcano views, relax | Settle in and enjoy the White City |
 
 ---
 
@@ -155,41 +171,46 @@
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | Arequipa: Plaza de Armas, Santa Catalina Monastery | Easy-paced explore, enjoy local food |
-| Afternoon | Drive Arequipa → Colca (via viewpoints & high pass) | Join 2-day Colca tour, reach Chivay/Yanque |
+| 08:00 | Colca Canyon 2-day tour departs Arequipa | Can start same morning per Peru Hop schedule |
+| Afternoon | Drive via viewpoints & high pass to Chivay/Yanque | Scenic stops, vicuña spotting |
 | Evening | Hot springs & relax in Colca Valley | Early night before condors next day |
 
 ---
 
 #### Day 9 - Sunday, July 5
-**Location:** Colca Canyon → Arequipa → Cusco  
-**Accommodation:** Cusco (arrive late)
+**Location:** Colca Canyon → Arequipa  
+**Accommodation:** Arequipa  
 
 | Time | Activity | Notes |
 |------|----------|-------|
 | Early morning | Cruz del Cóndor viewpoint | Watch Andean condors soaring over the canyon |
 | Late morning | Colca villages & viewpoints | Short walks, photo stops, lunch en route |
-| Afternoon / Evening | Return to Arequipa, Peru Hop bus/transport to Cusco | Long travel, arrive Cusco late and go straight to accommodation |
+| Afternoon | Return to Arequipa | Relax, unwind after two early mornings |
+| Evening | Dinner in Arequipa, early night | Enjoy another evening in the White City |
 
 ---
 
 #### Day 10 - Monday, July 6
-**Location:**  
-**Accommodation:**  
+**Location:** Arequipa → Cusco  
+**Accommodation:** Cusco  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| All day | Sacred Valley day 1: Pisac ruins & market, Ollantaytambo | Option to overnight in Ollantaytambo/Urubamba |
+| Morning | Yanahuara viewpoint, last Arequipa explore | Volcano views, neighbourhood stroll |
+| Afternoon | Free time — San Camilo market revisit, cafés, souvenirs | Soak up the last of Arequipa |
+| 18:05 | Fly Arequipa → Cusco (~1hr) | Arrive ~19:15, check in, light dinner |
+| Evening | Settle into Cusco, rest | Altitude adjustment begins (3,400m) |
 
 ---
 
 #### Day 11 - Tuesday, July 7
-**Location:**  
-**Accommodation:**  
+**Location:** Cusco  
+**Accommodation:** Cusco  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| All day | Sacred Valley day 2: Moray, Maras salt mines, Chinchero | Return to Cusco in the evening |
+| All day | Cusco acclimatization — coca tea, Plaza de Armas, San Pedro market | Easy-paced day adjusting to 3,400m altitude |
+| Evening | Dinner in the plaza, early night | Take it slow, drink lots of water |
 
 ---
 
@@ -199,8 +220,7 @@
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Early morning → Afternoon | Rainbow Mountain day trip from Cusco | High altitude – go only if well acclimatized |
-| Evening | Final prep and briefing for Salkantay trek | Pack bags and sleep early |
+| All day | Sacred Valley day 1: Pisac ruins & market, Ollantaytambo | Option to overnight in Ollantaytambo/Urubamba |
 
 ---
 
@@ -210,109 +230,108 @@
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Salkantay trail
+| All day | Sacred Valley day 2: Moray, Maras salt mines, Chinchero | Return to Cusco in the evening |
+
+---
+
+#### Day 13 - Thursday, July 9
+**Location:** Cusco  
+**Accommodation:** Cusco  
+
+| Time | Activity | Notes |
+|------|----------|-------|
+| Early morning → Afternoon | Rainbow Mountain day trip from Cusco | High altitude (5,200m) – well acclimatized by now |
+| Evening | Rest, early dinner | Recover from the big day |
 
 ---
 
 #### Day 14 - Friday, July 10
-**Location:**  
-**Accommodation:**  
+**Location:** Cusco  
+**Accommodation:** Cusco  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Salkantay trail
+| Morning | Sacsayhuamán ruins (easy walk from Cusco) | Incredible Inca stonework, great views |
+| Afternoon | San Blas neighbourhood, artisan shops, cafés | Relax and recover from Rainbow Mountain |
 
 ---
 
 ### Week 3: July 11 – July 17
 
 #### Day 15 - Saturday, July 11
-**Location:**  
-**Accommodation:**  
-
-| Time | Activity | Notes |
-|------|----------|-------|
-| Salkantay trail
-
----
-
-#### Day 16 - Sunday, July 12
-**Location:**  
-**Accommodation:**  
-
-| Time | Activity | Notes |
-|------|----------|-------|
-| Salkantay trail
-
----
-
-#### Day 17 - Monday, July 13
-**Location:**  
-**Accommodation:**  
-
-| Time | Activity | Notes |
-|------|----------|-------|
-| All day | Salkantay trail – Machu Picchu day | Early entry to Machu Picchu, return to Cusco in evening |
-
----
-
-#### Day 18 - Tuesday, July 14
-**Location:**  
-**Accommodation:**  
-
-| Time | Activity | Notes |
-|------|----------|-------|
-| All day | Cusco rest & recovery after Salkantay trek | Laundry, café hopping, slow sightseeing |
-
----
-
-#### Day 19 - Wednesday, July 15
-**Location:** Amazon Jungle (near Puerto Maldonado)  
-**Accommodation:** Amazon lodge  
-
-| Time | Activity | Notes |
-|------|----------|-------|
-| Morning | Fly Cusco → Puerto Maldonado, boat transfer to Amazon lodge | Start Amazon jungle stay |
-| Afternoon / Night | Jungle walks and night wildlife excursion | Guided activities organised by the lodge |
-
----
-
-#### Day 20 - Thursday, July 16
-**Location:** Amazon Jungle  
-**Accommodation:** Amazon lodge  
-
-| Time | Activity | Notes |
-|------|----------|-------|
-| Morning / Afternoon | Amazon activities (boat trips, canopy tower, wildlife watching) | Full relaxed day in the jungle |
-| Evening | Sunset by the river, chill in hammock or by lodge bar | Early night, enjoy the sounds of the rainforest |
-
----
-
-#### Day 21 - Friday, July 17
-**Location:** Amazon Jungle → Cusco  
+**Location:** Cusco  
 **Accommodation:** Cusco  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | Final short jungle activity (lake or walk) | Last chance for wildlife spotting |
-| Midday | Boat back to Puerto Maldonado, fly to Cusco | Travel back to the Andes |
-| Evening | Easy dinner in Cusco, early night | Get ready for Lake Titicaca leg |
+| All day | Free Cusco day — cooking class, chocolate museum, or just wander | Enjoy the city at your own pace |
+
+---
+
+#### Day 16 - Sunday, July 12
+**Location:** Cusco  
+**Accommodation:** Cusco  
+
+| Time | Activity | Notes |
+|------|----------|-------|
+| Morning / Afternoon | Easy morning, pack for the trek, sort gear | Leave non-trek bags at hostel |
+| 17:00 | Pre-trek briefing | Meet your guide and group |
+
+---
+
+#### Day 17 - Monday, July 13
+**Location:** Salkantay Trek  
+**Accommodation:** Camping  
+
+| Time | Activity | Notes |
+|------|----------|-------|
+| All day | Salkantay Trek – Day 1 | Trek begins! |
+
+---
+
+#### Day 18 - Tuesday, July 14
+**Location:** Salkantay Trek  
+**Accommodation:** Camping  
+
+| Time | Activity | Notes |
+|------|----------|-------|
+| All day | Salkantay Trek – Day 2 | High pass day |
+
+---
+
+#### Day 19 - Wednesday, July 15
+**Location:** Salkantay Trek  
+**Accommodation:** Camping  
+
+| Time | Activity | Notes |
+|------|----------|-------|
+| All day | Salkantay Trek – Day 3 | Descent into cloud forest |
+
+---
+
+#### Day 20 - Thursday, July 16
+**Location:** Salkantay Trek  
+**Accommodation:** Camping  
+
+| Time | Activity | Notes |
+|------|----------|-------|
+| All day | Salkantay Trek – Day 4 | Final trek day before Machu Picchu |
+
+---
+
+#### Day 21 - Friday, July 17
+**Location:** Machu Picchu → Cusco  
+**Accommodation:** Cusco  
+
+| Time | Activity | Notes |
+|------|----------|-------|
+| All day | Salkantay Trek – Machu Picchu day | Early entry to Machu Picchu, return to Cusco in evening |
 
 ---
 
 ### Week 4: July 18 – July 24
 
 #### Day 22 - Saturday, July 18
-**Location:** Cusco → Puno (Lake Titicaca)  
-**Accommodation:** Puno  
-
-| Time | Activity | Notes |
-|------|----------|-------|
-| Morning / Evening | Peru Hop bus Cusco → Puno (Lake Titicaca) | Scenic route across the altiplano, arrive Puno and settle in |
-
----
-
-#### Day 23 - Sunday, July 19
 **Location:** Puno / Lake Titicaca, Peru  
 **Accommodation:** Puno or homestay  
 
@@ -322,18 +341,18 @@
 
 ---
 
-#### Day 24 - Monday, July 20
+#### Day 23 - Sunday, July 19
 **Location:** Copacabana, Bolivia  
 **Accommodation:** Copacabana  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | Peru Hop bus Puno → Copacabana, border formalities en route | ~3hr, border crossing at Kasani/Yunguyo |
+| Morning | Bus Puno → Copacabana, border formalities en route | ~3hr, border crossing at Kasani/Yunguyo |
 | Afternoon | Explore Copacabana: waterfront, Cerro Calvario sunset hike | Relaxed first day in Bolivia |
 
 ---
 
-#### Day 25 - Tuesday, July 21
+#### Day 24 - Monday, July 20
 **Location:** Isla del Sol, Bolivia  
 **Accommodation:** Isla del Sol or Copacabana  
 
@@ -344,19 +363,19 @@
 
 ---
 
-#### Day 26 - Wednesday, July 22
+#### Day 25 - Tuesday, July 21
 **Location:** La Paz, Bolivia  
 **Accommodation:** La Paz  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | Peru Hop bus Copacabana → La Paz | ~4hr, scenic drive along the lake |
+| Morning | Bus Copacabana → La Paz | ~4hr, scenic drive along the lake |
 | Afternoon | Teleférico ride (cable car network), city viewpoints | Amazing views over the dramatic city |
 | Evening | Settle in, explore neighbourhood | Stay near the Witches' Market area |
 
 ---
 
-#### Day 27 - Thursday, July 23
+#### Day 26 - Wednesday, July 22
 **Location:** La Paz, Bolivia  
 **Accommodation:** La Paz  
 
@@ -367,7 +386,7 @@
 
 ---
 
-#### Day 28 - Friday, July 24
+#### Day 27 - Thursday, July 23
 **Location:** La Paz → Sucre  
 **Accommodation:** Sucre  
 
@@ -380,9 +399,7 @@
 
 ---
 
-### Week 5: July 25 – July 31
-
-#### Day 29 - Saturday, July 25
+#### Day 28 - Friday, July 24
 **Location:** Sucre, Bolivia  
 **Accommodation:** Sucre  
 
@@ -394,7 +411,9 @@
 
 ---
 
-#### Day 30 - Sunday, July 26
+### Week 5: July 25 – July 31
+
+#### Day 29 - Saturday, July 25
 **Location:** Sucre → Potosí → Uyuni  
 **Accommodation:** Overnight bus or salt hotel  
 
@@ -406,42 +425,42 @@
 
 ---
 
-#### Day 31 - Monday, July 27
+#### Day 30 - Sunday, July 26
 **Location:** Salar de Uyuni  
 **Accommodation:** Salt hotel or basic refuge  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| All day | Uyuni Salt Flats Day 1: Train cemetery, Colchani village, endless salt flats | Perspective photos, salt hotel visit |
+| All day | **3-Day Uyuni Tour (Day 1):** Train cemetery, Colchani village, endless salt flats | Perspective photos, salt hotel visit |
 | Evening | Sunset on the salt flats, overnight at salt hotel | Unforgettable stargazing |
 
 ---
 
-#### Day 32 - Tuesday, July 28
+#### Day 31 - Monday, July 27
 **Location:** Eduardo Avaroa Reserve  
 **Accommodation:** Basic refuge near lagunas  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| All day | Day 2: Laguna Colorada (red lake), flamingos, rock formations | Stunning coloured lagoons, wildlife |
+| All day | **3-Day Uyuni Tour (Day 2):** Laguna Colorada (red lake), flamingos, rock formations | Stunning coloured lagoons, wildlife |
 | Evening | Overnight in remote refuge | Basic but magical setting |
 
 ---
 
-#### Day 33 - Wednesday, July 29
+#### Day 32 - Tuesday, July 28
 **Location:** Eduardo Avaroa → Chile border → San Pedro de Atacama  
 **Accommodation:** San Pedro de Atacama, Chile  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Early morning | Sol de Mañana geysers (sunrise), hot springs | Wake ~4am, worth it! |
+| Early morning | **3-Day Uyuni Tour (Day 3):** Sol de Mañana geysers (sunrise), hot springs | Wake ~4am, worth it! |
 | Morning | Laguna Verde at foot of Licancabur volcano | Iconic green lake |
 | Midday | Cross border to Chile at Hito Cajón | Tour drops you at border, arrange Chile transfer |
 | Afternoon | Arrive San Pedro de Atacama | Settle in, explore town |
 
 ---
 
-#### Day 34 - Thursday, July 30
+#### Day 33 - Wednesday, July 29
 **Location:** San Pedro de Atacama, Chile  
 **Accommodation:** San Pedro de Atacama  
 
@@ -449,11 +468,11 @@
 |------|----------|-------|
 | Morning | Sleep in, recover from early geyser start | Rest after Bolivia crossing |
 | Afternoon | Explore San Pedro town, book tours, wander the streets | Shops, cafés, get your bearings |
-| Late afternoon | Valle de la Luna sunset tour | Otherworldly moonscape, stunning sunset colours | 
+| Late afternoon | Valle de la Luna sunset tour | Otherworldly moonscape, stunning sunset colours |
 
 ---
 
-#### Day 35 - Friday, July 31
+#### Day 34 - Thursday, July 30
 **Location:** San Pedro de Atacama, Chile  
 **Accommodation:** San Pedro de Atacama  
 
@@ -464,89 +483,98 @@
 
 ---
 
-### Week 6: August 1 – August 7
-
-#### Day 36 - Saturday, August 1
-**Location:**  
-**Accommodation:**  
+#### Day 35 - Friday, July 31
+**Location:** San Pedro de Atacama, Chile  
+**Accommodation:** San Pedro de Atacama  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | | |
-| Afternoon | | |
-| Evening | | |
+| Early morning | El Tatio geysers tour (depart ~4am) | Steaming geysers at sunrise, hot springs pool |
+| Late morning | Return to San Pedro, rest | Recover from the early start |
+| Evening | Stargazing tour | Atacama has some of the clearest skies on Earth |
+
+---
+
+### Week 6: August 1 – August 7
+
+#### Day 36 - Saturday, August 1
+**Location:** San Pedro de Atacama → Santiago  
+**Accommodation:** Santiago  
+
+| Time | Activity | Notes |
+|------|----------|-------|
+| Morning | Shuttle San Pedro → Calama airport (~1hr) | |
+| Midday | Fly Calama → Santiago (~2hr) | Book LATAM or Sky Airline |
+| Afternoon / Evening | Arrive Santiago, settle in Barrio Lastarria | Cafés, bookshops, lively neighbourhood |
 
 ---
 
 #### Day 37 - Sunday, August 2
-**Location:**  
-**Accommodation:**  
+**Location:** Santiago, Chile  
+**Accommodation:** Santiago  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | | |
-| Afternoon | | |
-| Evening | | |
+| Morning | Cerro San Cristóbal (funicular or hike) | Panoramic city views with Andes backdrop |
+| Afternoon | Bellavista neighbourhood, La Chascona (Neruda’s house) | Street art, colourful streets |
+| Evening | Chilean dinner | Try cazuela or pastel de choclo |
 
 ---
 
 #### Day 38 - Monday, August 3
-**Location:**  
-**Accommodation:**  
+**Location:** Valle Nevado, Chile  
+**Accommodation:** Santiago  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | | |
-| Afternoon | | |
-| Evening | | |
+| All day | Ski Day 1 at Valle Nevado! | Transfer bus ~7am from Santiago, beginner lessons for Emma |
+| Evening | Return to Santiago ~6pm | Sore legs guaranteed |
 
 ---
 
 #### Day 39 - Tuesday, August 4
-**Location:**  
-**Accommodation:**  
+**Location:** Valle Nevado, Chile  
+**Accommodation:** Santiago  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | | |
-| Afternoon | | |
-| Evening | | |
+| All day | Ski Day 2 at Valle Nevado! | Practice day — she’ll enjoy it today! |
+| Evening | Return to Santiago | Celebrate with dinner |
 
 ---
 
 #### Day 40 - Wednesday, August 5
-**Location:**  
-**Accommodation:**  
+**Location:** Valparaíso day trip  
+**Accommodation:** Santiago  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | | |
-| Afternoon | | |
-| Evening | | |
+| Morning | Bus Santiago → Valparaíso (~1.5hr) | Turbus or Pullman |
+| All day | Street art, ascensores (funiculars), Cerro Alegre & Concepción | UNESCO heritage, rainbow hills |
+| Evening | Harbour sunset, seafood dinner, bus back | |
 
 ---
 
 #### Day 41 - Thursday, August 6
-**Location:**  
-**Accommodation:**  
+**Location:** Santiago, Chile  
+**Accommodation:** Santiago  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | | |
-| Afternoon | | |
-| Evening | | |
+| Morning | Mercado Central (seafood breakfast/lunch) | Famous fish market |
+| Afternoon | Barrio Italia (vintage shops, cafés) | Trendy neighbourhood |
+| Evening | Nightlife | Santiago has a great scene |
 
 ---
 
 #### Day 42 - Friday, August 7
-**Location:**  
-**Accommodation:**  
+**Location:** Wine valley day trip  
+**Accommodation:** Santiago  
 
 | Time | Activity | Notes |
 |------|----------|-------|
-| Morning | | |
-| Afternoon | | |
-| Evening | | |
+| All day | Wine valley day trip (Casablanca or Maipo) | Tastings at 2–3 vineyards |
+| Evening | Return to Santiago, dinner | Last chance for Chilean wine at restaurant prices |
 
 ---
 
