@@ -14,14 +14,9 @@ env:
   LOCATION: westeurope
 
 jobs:
-  # ---- Job 1: Deploy infrastructure with Bicep ----
-  infra:
-    name: Deploy Infrastructure
+  deploy:
+    name: Deploy Infrastructure & App
     runs-on: ubuntu-latest
-    outputs:
-      swa-name: ${{ steps.deploy.outputs.staticWebAppName }}
-      swa-token: ${{ steps.deploy.outputs.staticWebAppDeploymentToken }}
-      swa-url: ${{ steps.deploy.outputs.staticWebAppUrl }}
     steps:
       - uses: actions/checkout@v4
 
@@ -39,20 +34,21 @@ jobs:
             az group create --name ${{ env.RESOURCE_GROUP }} --location ${{ env.LOCATION }}
 
       - name: Deploy Bicep
-        id: deploy
+        id: bicep
         uses: azure/arm-deploy@v2
         with:
           resourceGroupName: ${{ env.RESOURCE_GROUP }}
           template: ./infra/main.bicep
           parameters: location=${{ env.LOCATION }}
 
-  # ---- Job 2: Deploy app code to Static Web Apps ----
-  deploy:
-    name: Deploy App
-    needs: infra
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+      - name: Get SWA Deployment Token
+        id: swa-token
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            TOKEN=$(az staticwebapp secrets list --name ${{ steps.bicep.outputs.staticWebAppName }} --query "properties.apiKey" -o tsv)
+            echo "::add-mask::$TOKEN"
+            echo "token=$TOKEN" >> $GITHUB_OUTPUT
 
       - name: Install API dependencies
         run: cd api && npm ci
@@ -60,7 +56,7 @@ jobs:
       - name: Deploy to Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ needs.infra.outputs.swa-token }}
+          azure_static_web_apps_api_token: ${{ steps.swa-token.outputs.token }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
           app_location: .

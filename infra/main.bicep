@@ -65,5 +65,4 @@ resource swaAppSettings 'Microsoft.Web/staticSites/config@2023-01-01' = {
 // ---- Outputs ----
 output staticWebAppName string = staticWebApp.name
 output staticWebAppUrl string = 'https://${staticWebApp.properties.defaultHostname}'
-output staticWebAppDeploymentToken string = staticWebApp.listSecrets().properties.apiKey
 output storageAccountName string = storageAccount.name
