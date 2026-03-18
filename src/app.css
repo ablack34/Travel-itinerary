@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Base ---- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---- Stat Cards ---- */
+.stat-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f39c12;
+}
+.stat-label {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* ---- Timeline segments ---- */
+.timeline-peru {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+.timeline-bolivia {
+  background: linear-gradient(90deg, #f39c12, #d35400);
+}
+.timeline-chile {
+  background: linear-gradient(90deg, #3498db, #2980b9);
+}
+
+/* ---- Legend colors ---- */
+.legend-peru {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+.legend-bolivia {
+  background: linear-gradient(135deg, #f39c12, #d35400);
+}
+.legend-chile {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+.legend-travel {
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+.legend-home {
+  background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+}
+
+/* ---- Week containers ---- */
+.week-container {
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+}
+.week-header {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  color: #f39c12;
+}
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+@media (max-width: 900px) {
+  .week-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .week-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Day Cards ---- */
+.day-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 15px;
+  min-height: 200px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.day-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.day-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+.day-card-peru::before {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+.day-card-bolivia::before {
+  background: linear-gradient(90deg, #f39c12, #d35400);
+}
+.day-card-chile::before {
+  background: linear-gradient(90deg, #3498db, #2980b9);
+}
+.day-card-travel::before {
+  background: linear-gradient(90deg, #9b59b6, #8e44ad);
+}
+.day-card-home::before {
+  background: linear-gradient(90deg, #7f8c8d, #95a5a6);
+}
+
+/* ---- Activity items ---- */
+.activity-item {
+  margin-bottom: 5px;
+  padding-left: 15px;
+  position: relative;
+}
+.activity-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #f39c12;
+}
+
+/* ---- Highlight badge ---- */
+.highlight {
+  background: rgba(243, 156, 18, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}

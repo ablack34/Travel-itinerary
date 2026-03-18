@@ -3,8 +3,10 @@
   "configurations": {
     "travel-itinerary": {
       "appLocation": ".",
-      "outputLocation": ".",
-      "apiLocation": "api"
+      "outputLocation": "dist",
+      "apiLocation": "api",
+      "run": "npm run dev",
+      "appDevserverUrl": "http://localhost:5173"
     }
   }
 }

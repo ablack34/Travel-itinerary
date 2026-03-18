@@ -34,6 +34,14 @@ resource attachmentsContainer 'Microsoft.Storage/storageAccounts/blobServices/co
   }
 }
 
+resource dataContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-01-01' = {
+  parent: blobService
+  name: 'data'
+  properties: {
+    publicAccess: 'None'
+  }
+}
+
 // ---- Static Web App (hosts HTML + API functions) ----
 resource staticWebApp 'Microsoft.Web/staticSites@2023-01-01' = {
   name: 'travel-itinerary-${resourceSuffix}'
@@ -47,7 +55,7 @@ resource staticWebApp 'Microsoft.Web/staticSites@2023-01-01' = {
     allowConfigFileUpdates: true
     buildProperties: {
       appLocation: '.'
-      outputLocation: '.'
+      outputLocation: 'dist'
       apiLocation: 'api'
     }
   }
