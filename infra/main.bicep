@@ -6,86 +6,44 @@ param location string = resourceGroup().location
 @description('Unique suffix for resource names')
 param resourceSuffix string = uniqueString(resourceGroup().id)
 
-// ---- Storage Account (for attachments + itinerary data + Function App runtime) ----
-resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
-  name: 'stitinerary${resourceSuffix}'
+// ---- Cosmos DB (serverless, free tier) ----
+resource cosmosAccount 'Microsoft.DocumentDB/databaseAccounts@2024-02-15-preview' = {
+  name: 'cosmos-itinerary-${resourceSuffix}'
   location: location
-  sku: {
-    name: 'Standard_LRS'
-  }
-  kind: 'StorageV2'
+  kind: 'GlobalDocumentDB'
   properties: {
-    supportsHttpsTrafficOnly: true
-    minimumTlsVersion: 'TLS1_2'
-    allowBlobPublicAccess: false
-    publicNetworkAccess: 'Enabled'
+    databaseAccountOfferType: 'Standard'
+    locations: [{ locationName: location, failoverPriority: 0 }]
+    capabilities: [{ name: 'EnableServerless' }]
   }
 }
 
-resource blobService 'Microsoft.Storage/storageAccounts/blobServices@2023-01-01' = {
-  parent: storageAccount
-  name: 'default'
-}
-
-resource attachmentsContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-01-01' = {
-  parent: blobService
-  name: 'attachments'
+resource cosmosDb 'Microsoft.DocumentDB/databaseAccounts/sqlDatabases@2024-02-15-preview' = {
+  parent: cosmosAccount
+  name: 'travel'
   properties: {
-    publicAccess: 'None'
+    resource: { id: 'travel' }
   }
 }
 
-resource dataContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-01-01' = {
-  parent: blobService
-  name: 'data'
+resource cosmosContainer 'Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers@2024-02-15-preview' = {
+  parent: cosmosDb
+  name: 'itinerary'
   properties: {
-    publicAccess: 'None'
-  }
-}
-
-// ---- Function App (standalone API backend) ----
-resource appServicePlan 'Microsoft.Web/serverfarms@2023-01-01' = {
-  name: 'plan-itinerary-${resourceSuffix}'
-  location: location
-  sku: {
-    name: 'B1'
-    tier: 'Basic'
-  }
-  kind: 'linux'
-  properties: {
-    reserved: true
-  }
-}
-
-resource functionApp 'Microsoft.Web/sites@2023-01-01' = {
-  name: 'func-itinerary-${resourceSuffix}'
-  location: location
-  kind: 'functionapp,linux'
-  identity: {
-    type: 'SystemAssigned'
-  }
-  properties: {
-    serverFarmId: appServicePlan.id
-    reserved: true
-    siteConfig: {
-      linuxFxVersion: 'NODE|20'
-      appSettings: [
-        { name: 'AzureWebJobsStorage__accountName', value: storageAccount.name }
-        { name: 'AZURE_STORAGE_ACCOUNT_NAME', value: storageAccount.name }
-        { name: 'FUNCTIONS_EXTENSION_VERSION', value: '~4' }
-        { name: 'FUNCTIONS_WORKER_RUNTIME', value: 'node' }
-      ]
+    resource: {
+      id: 'itinerary'
+      partitionKey: { paths: ['/id'], kind: 'Hash' }
     }
   }
 }
 
-// ---- Static Web App (hosts Svelte frontend only) ----
+// ---- Static Web App (frontend + managed API functions) ----
 resource staticWebApp 'Microsoft.Web/staticSites@2023-01-01' = {
   name: 'travel-itinerary-${resourceSuffix}'
   location: location
   sku: {
-    name: 'Standard'
-    tier: 'Standard'
+    name: 'Free'
+    tier: 'Free'
   }
   properties: {
     stagingEnvironmentPolicy: 'Enabled'
@@ -93,28 +51,20 @@ resource staticWebApp 'Microsoft.Web/staticSites@2023-01-01' = {
     buildProperties: {
       appLocation: '.'
       outputLocation: 'dist'
+      apiLocation: 'api'
     }
   }
 }
 
-// ---- Link Function App as SWA backend (proxies /api/* to Function App) ----
-resource swaLinkedBackend 'Microsoft.Web/staticSites/linkedBackends@2022-09-01' = {
+// ---- Wire Cosmos connection string to SWA ----
+resource swaAppSettings 'Microsoft.Web/staticSites/config@2023-01-01' = {
   parent: staticWebApp
-  name: 'backend'
+  name: 'appsettings'
   properties: {
-    backendResourceId: functionApp.id
-    region: location
+    COSMOS_CONNECTION_STRING: cosmosAccount.listConnectionStrings().connectionStrings[0].connectionString
   }
 }
-
-// NOTE: Role assignments are managed via CLI (CI SP lacks roleAssignment write permission).
-// Function App identity needs on the storage account:
-//   - Storage Blob Data Contributor
-//   - Storage Queue Data Contributor
-//   - Storage Table Data Contributor
 
 // ---- Outputs ----
 output staticWebAppName string = staticWebApp.name
 output staticWebAppUrl string = 'https://${staticWebApp.properties.defaultHostname}'
-output storageAccountName string = storageAccount.name
-output functionAppName string = functionApp.name

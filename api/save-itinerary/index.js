@@ -1,10 +1,9 @@
-const { BlobServiceClient } = require("@azure/storage-blob");
-const { ManagedIdentityCredential } = require("@azure/identity");
+const { CosmosClient } = require("@azure/cosmos");
 
 module.exports = async function (context, req) {
-    const accountName = process.env.AZURE_STORAGE_ACCOUNT_NAME;
-    if (!accountName) {
-        context.res = { status: 500, body: { error: "Storage not configured" } };
+    const connectionString = process.env.COSMOS_CONNECTION_STRING;
+    if (!connectionString) {
+        context.res = { status: 500, body: { error: "Database not configured" } };
         return;
     }
 
@@ -15,26 +14,15 @@ module.exports = async function (context, req) {
     }
 
     try {
-        const blobServiceClient = new BlobServiceClient(
-            `https://${accountName}.blob.core.windows.net`,
-            new ManagedIdentityCredential()
-        );
-        const containerClient = blobServiceClient.getContainerClient("data");
-        await containerClient.createIfNotExists();
+        const client = new CosmosClient(connectionString);
+        const container = client.database("travel").container("itinerary");
 
-        const blobClient = containerClient.getBlockBlobClient("itinerary.json");
-        const content = JSON.stringify(itinerary, null, 2);
+        // Upsert the itinerary as a single document with fixed id
+        await container.items.upsert({ id: "main", ...itinerary });
 
-        await blobClient.upload(content, content.length, {
-            blobHTTPHeaders: { blobContentType: "application/json" }
-        });
-
-        context.res = {
-            headers: { "Content-Type": "application/json" },
-            body: { success: true }
-        };
+        context.res = { headers: { "Content-Type": "application/json" }, body: { success: true } };
     } catch (e) {
-        context.log.error("save-itinerary error:", e.message);
+        context.log.error("save-itinerary:", e.message);
         context.res = { status: 500, headers: { "Content-Type": "application/json" }, body: { error: e.message } };
     }
 };
