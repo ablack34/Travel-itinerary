@@ -48,10 +48,10 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2023-01-01' = {
   name: 'plan-itinerary-${resourceSuffix}'
   location: location
   sku: {
-    name: 'Y1'
-    tier: 'Dynamic'
+    name: 'B1'
+    tier: 'Basic'
   }
-  kind: 'functionapp'
+  kind: 'linux'
   properties: {
     reserved: true
   }
