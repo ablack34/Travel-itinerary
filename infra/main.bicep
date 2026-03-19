@@ -49,8 +49,8 @@ resource staticWebApp 'Microsoft.Web/staticSites@2023-01-01' = {
   name: 'travel-itinerary-${resourceSuffix}'
   location: location
   sku: {
-    name: 'Free'
-    tier: 'Free'
+    name: 'Standard'
+    tier: 'Standard'
   }
   identity: {
     type: 'SystemAssigned'
@@ -66,18 +66,8 @@ resource staticWebApp 'Microsoft.Web/staticSites@2023-01-01' = {
   }
 }
 
-// ---- Role assignment: SWA → Storage Blob Data Contributor ----
-var storageBlobDataContributorRole = subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')
-
-resource swaStorageRole 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  scope: storageAccount
-  name: guid(storageAccount.id, staticWebApp.id, storageBlobDataContributorRole)
-  properties: {
-    roleDefinitionId: storageBlobDataContributorRole
-    principalId: staticWebApp.identity.principalId
-    principalType: 'ServicePrincipal'
-  }
-}
+// NOTE: Role assignment (Storage Blob Data Contributor) is managed manually via CLI
+// because the CI service principal lacks Microsoft.Authorization/roleAssignments/write
 
 // ---- SWA app settings (storage account name for managed identity auth) ----
 resource swaAppSettings 'Microsoft.Web/staticSites/config@2023-01-01' = {
