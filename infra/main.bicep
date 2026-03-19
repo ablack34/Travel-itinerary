@@ -18,6 +18,8 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
     supportsHttpsTrafficOnly: true
     minimumTlsVersion: 'TLS1_2'
     allowBlobPublicAccess: false
+    allowSharedKeyAccess: true
+    publicNetworkAccess: 'Enabled'
   }
 }
 
@@ -50,6 +52,9 @@ resource staticWebApp 'Microsoft.Web/staticSites@2023-01-01' = {
     name: 'Free'
     tier: 'Free'
   }
+  identity: {
+    type: 'SystemAssigned'
+  }
   properties: {
     stagingEnvironmentPolicy: 'Enabled'
     allowConfigFileUpdates: true
@@ -61,12 +66,25 @@ resource staticWebApp 'Microsoft.Web/staticSites@2023-01-01' = {
   }
 }
 
-// ---- Link Storage connection string to SWA app settings ----
+// ---- Role assignment: SWA → Storage Blob Data Contributor ----
+var storageBlobDataContributorRole = subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')
+
+resource swaStorageRole 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+  scope: storageAccount
+  name: guid(storageAccount.id, staticWebApp.id, storageBlobDataContributorRole)
+  properties: {
+    roleDefinitionId: storageBlobDataContributorRole
+    principalId: staticWebApp.identity.principalId
+    principalType: 'ServicePrincipal'
+  }
+}
+
+// ---- SWA app settings (storage account name for managed identity auth) ----
 resource swaAppSettings 'Microsoft.Web/staticSites/config@2023-01-01' = {
   parent: staticWebApp
   name: 'appsettings'
   properties: {
-    AZURE_STORAGE_CONNECTION_STRING: 'DefaultEndpointsProtocol=https;AccountName=${storageAccount.name};AccountKey=${storageAccount.listKeys().keys[0].value};EndpointSuffix=core.windows.net'
+    AZURE_STORAGE_ACCOUNT_NAME: storageAccount.name
   }
 }
 

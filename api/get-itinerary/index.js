@@ -1,13 +1,17 @@
 const { BlobServiceClient } = require("@azure/storage-blob");
+const { DefaultAzureCredential } = require("@azure/identity");
 
 module.exports = async function (context, req) {
-    const connectionString = process.env.AZURE_STORAGE_CONNECTION_STRING;
-    if (!connectionString) {
-        context.res = { status: 500, body: { error: "Storage not configured" } };
+    const accountName = process.env.AZURE_STORAGE_ACCOUNT_NAME;
+    if (!accountName) {
+        context.res = { status: 500, headers: { "Content-Type": "application/json" }, body: { error: "Storage not configured" } };
         return;
     }
 
-    const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
+    const blobServiceClient = new BlobServiceClient(
+        `https://${accountName}.blob.core.windows.net`,
+        new DefaultAzureCredential()
+    );
     const containerClient = blobServiceClient.getContainerClient("data");
     const blobClient = containerClient.getBlobClient("itinerary.json");
 
@@ -28,6 +32,7 @@ module.exports = async function (context, req) {
                 body: { error: "No itinerary found" }
             };
         } else {
+            context.log.error("get-itinerary error:", e.message);
             context.res = {
                 status: 500,
                 headers: { "Content-Type": "application/json" },

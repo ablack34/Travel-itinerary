@@ -1,6 +1,6 @@
-const { BlobServiceClient, generateBlobSASQueryParameters, BlobSASPermissions, StorageSharedKeyCredential } = require("@azure/storage-blob");
+const { BlobServiceClient, generateBlobSASQueryParameters, BlobSASPermissions } = require("@azure/storage-blob");
+const { DefaultAzureCredential } = require("@azure/identity");
 
-const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const ALLOWED_EXTENSIONS = ['pdf', 'jpg', 'jpeg', 'png', 'gif', 'webp', 'doc', 'docx', 'eml', 'msg', 'txt'];
 
 module.exports = async function (context, req) {
@@ -10,43 +10,42 @@ module.exports = async function (context, req) {
         return;
     }
 
-    // Validate file extension
     const ext = fileName.split('.').pop().toLowerCase();
     if (!ALLOWED_EXTENSIONS.includes(ext)) {
         context.res = { status: 400, body: { error: `File type '.${ext}' not allowed` } };
         return;
     }
 
-    // Sanitize file name — allow only safe characters
     const safeName = fileName.replace(/[^a-zA-Z0-9._-]/g, '_');
     const safeDay = day.replace(/ /g, "-");
     const blobPath = `${safeDay}/${safeName}`;
 
-    const connectionString = process.env.AZURE_STORAGE_CONNECTION_STRING;
-    if (!connectionString) {
+    const accountName = process.env.AZURE_STORAGE_ACCOUNT_NAME;
+    if (!accountName) {
         context.res = { status: 500, body: { error: "Storage not configured" } };
         return;
     }
 
     try {
-        const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
+        const credential = new DefaultAzureCredential();
+        const blobServiceClient = new BlobServiceClient(
+            `https://${accountName}.blob.core.windows.net`,
+            credential
+        );
         const containerClient = blobServiceClient.getContainerClient("attachments");
-
-        // Ensure container exists
         await containerClient.createIfNotExists();
 
-        const accountName = connectionString.match(/AccountName=([^;]+)/)[1];
-        const accountKey = connectionString.match(/AccountKey=([^;]+)/)[1];
-        const credential = new StorageSharedKeyCredential(accountName, accountKey);
+        const startsOn = new Date();
+        const expiresOn = new Date(Date.now() + 5 * 60 * 1000);
+        const userDelegationKey = await blobServiceClient.getUserDelegationKey(startsOn, expiresOn);
 
-        // Generate a 5-minute write-only SAS token for this specific blob
         const blobClient = containerClient.getBlobClient(blobPath);
         const sasToken = generateBlobSASQueryParameters({
             containerName: "attachments",
             blobName: blobPath,
             permissions: BlobSASPermissions.parse("cw"),
-            expiresOn: new Date(Date.now() + 5 * 60 * 1000)
-        }, credential).toString();
+            expiresOn
+        }, userDelegationKey, accountName).toString();
 
         context.res = {
             headers: { "Content-Type": "application/json" },
@@ -63,4 +62,5 @@ module.exports = async function (context, req) {
             body: { error: e.message || "Failed to generate upload URL" }
         };
     }
+};
 };
