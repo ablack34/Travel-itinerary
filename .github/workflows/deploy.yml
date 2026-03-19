@@ -68,5 +68,3 @@ jobs:
           app_location: .
           output_location: dist
           api_location: api
-          app_location: .
-          output_location: dist
