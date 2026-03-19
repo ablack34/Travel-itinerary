@@ -28,31 +28,39 @@ module.exports = async function (context, req) {
         return;
     }
 
-    const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
-    const containerClient = blobServiceClient.getContainerClient("attachments");
+    try {
+        const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
+        const containerClient = blobServiceClient.getContainerClient("attachments");
 
-    // Ensure container exists
-    await containerClient.createIfNotExists();
+        // Ensure container exists
+        await containerClient.createIfNotExists();
 
-    const accountName = connectionString.match(/AccountName=([^;]+)/)[1];
-    const accountKey = connectionString.match(/AccountKey=([^;]+)/)[1];
-    const credential = new StorageSharedKeyCredential(accountName, accountKey);
+        const accountName = connectionString.match(/AccountName=([^;]+)/)[1];
+        const accountKey = connectionString.match(/AccountKey=([^;]+)/)[1];
+        const credential = new StorageSharedKeyCredential(accountName, accountKey);
 
-    // Generate a 5-minute write-only SAS token for this specific blob
-    const blobClient = containerClient.getBlobClient(blobPath);
-    const sasToken = generateBlobSASQueryParameters({
-        containerName: "attachments",
-        blobName: blobPath,
-        permissions: BlobSASPermissions.parse("cw"), // create + write only
-        expiresOn: new Date(Date.now() + 5 * 60 * 1000), // 5 minutes
-        contentLengthRange: { max: MAX_FILE_SIZE }
-    }, credential).toString();
+        // Generate a 5-minute write-only SAS token for this specific blob
+        const blobClient = containerClient.getBlobClient(blobPath);
+        const sasToken = generateBlobSASQueryParameters({
+            containerName: "attachments",
+            blobName: blobPath,
+            permissions: BlobSASPermissions.parse("cw"),
+            expiresOn: new Date(Date.now() + 5 * 60 * 1000)
+        }, credential).toString();
 
-    context.res = {
-        headers: { "Content-Type": "application/json" },
-        body: {
-            uploadUrl: `${blobClient.url}?${sasToken}`,
-            blobPath
-        }
-    };
+        context.res = {
+            headers: { "Content-Type": "application/json" },
+            body: {
+                uploadUrl: `${blobClient.url}?${sasToken}`,
+                blobPath
+            }
+        };
+    } catch (e) {
+        context.log.error("get-upload-url error:", e.message);
+        context.res = {
+            status: 500,
+            headers: { "Content-Type": "application/json" },
+            body: { error: e.message || "Failed to generate upload URL" }
+        };
+    }
 };
