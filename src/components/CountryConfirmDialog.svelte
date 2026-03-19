@@ -16,7 +16,7 @@
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div
-  class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+  class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70"
   onkeydown={(e) => e.key === 'Escape' && oncancel()}
 >
   <!-- svelte-ignore a11y_click_events_have_key_events -->
@@ -26,9 +26,9 @@
   >
     <h3 class="text-lg font-bold text-[#f39c12] mb-3">⚠️ Country Boundary Change</h3>
     <p class="text-[#ccc] text-sm mb-5">
-      Moving "<span class="text-white font-semibold">{movedDay.location}</span>"
+      Moving "<span class="font-semibold text-white">{movedDay.location}</span>"
       (<span class="text-white">{capitalize(movedDay.country)}</span>)
-      between <span class="text-white font-semibold">{capitalize(neighbourCountry)}</span> days.
+      between <span class="font-semibold text-white">{capitalize(neighbourCountry)}</span> days.
     </p>
     <div class="flex flex-col gap-2">
       <button class="confirm-btn keep" onclick={onkeep}>
