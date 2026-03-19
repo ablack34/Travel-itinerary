@@ -1,9 +1,11 @@
 <script lang="ts">
   import type { Itinerary, Day } from './lib/types';
-  import { loadItinerary, saveItinerary } from './lib/api';
+  import { loadItinerary, saveItinerary, listFiles } from './lib/api';
+  import { getDayKey, formatDate, getDayDate, formatWeekday } from './lib/dates';
   import Header from './components/Header.svelte';
   import WeekGrid from './components/WeekGrid.svelte';
   import CountryConfirmDialog from './components/CountryConfirmDialog.svelte';
+  import AttachmentModal from './components/AttachmentModal.svelte';
 
   let itinerary = $state<Itinerary | null>(null);
   let error = $state<string | null>(null);
@@ -24,11 +26,16 @@
     toIndex: number;
   } | null>(null);
 
+  // Attachment state
+  let attachmentCounts = $state<Record<string, number>>({});
+  let attachmentModal = $state<{ dayKey: string; dayLabel: string } | null>(null);
+
   $effect(() => {
     loadItinerary()
       .then((data) => {
         itinerary = data;
         loading = false;
+        loadAttachmentCounts();
       })
       .catch((e) => {
         error = e.message;
@@ -130,6 +137,35 @@
   function confirmCancel() {
     confirmDialog = null;
   }
+
+  // ---- Attachments ----
+
+  function loadAttachmentCounts() {
+    if (!itinerary) return;
+    for (let i = 0; i < itinerary.days.length; i++) {
+      const key = getDayKey(i);
+      listFiles(key).then((files) => {
+        if (files.length > 0) {
+          attachmentCounts[key] = files.length;
+        }
+      });
+    }
+  }
+
+  function openAttachments(index: number) {
+    const key = getDayKey(index);
+    const date = getDayDate(index);
+    const label = `${formatDate(date)} (${formatWeekday(date)})`;
+    attachmentModal = { dayKey: key, dayLabel: label };
+  }
+
+  function onAttachmentCountChange(dayKey: string, count: number) {
+    attachmentCounts[dayKey] = count;
+  }
+
+  function closeAttachmentModal() {
+    attachmentModal = null;
+  }
 </script>
 
 <main
@@ -160,6 +196,8 @@
       ondragstart={onDragStart}
       ondrop={onDrop}
       {draggingIndex}
+      {attachmentCounts}
+      onopenattachments={openAttachments}
     />
     <div class="text-center mt-10 text-[#666] text-sm">
       <p>✨ {itinerary.days.length} Days • 3 Countries • Countless Adventures ✨</p>
@@ -175,5 +213,14 @@
     onkeep={confirmKeep}
     onchangecountry={confirmChangeCountry}
     oncancel={confirmCancel}
+  />
+{/if}
+
+{#if attachmentModal}
+  <AttachmentModal
+    dayKey={attachmentModal.dayKey}
+    dayLabel={attachmentModal.dayLabel}
+    onclose={closeAttachmentModal}
+    oncountchange={onAttachmentCountChange}
   />
 {/if}

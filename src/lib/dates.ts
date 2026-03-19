@@ -13,3 +13,7 @@ export function formatDate(date: Date): string {
 export function formatWeekday(date: Date): string {
   return date.toLocaleDateString('en-US', { weekday: 'long' });
 }
+
+export function getDayKey(index: number): string {
+  return formatDate(getDayDate(index)).replace(/ /g, '-');
+}

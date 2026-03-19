@@ -258,3 +258,90 @@ body {
   background: rgba(255, 255, 255, 0.15);
   color: #fff;
 }
+
+/* ---- Attachment button (inline next to Day X) ---- */
+.attach-btn-inline {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #aaa;
+  font-size: 0.9rem;
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+.attach-btn-inline:hover {
+  background: rgba(243, 156, 18, 0.3);
+  color: #f39c12;
+}
+.attach-btn-inline.has-files {
+  background: rgba(243, 156, 18, 0.25);
+  color: #f39c12;
+}
+.attach-badge-inline {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 0.55rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* ---- Attachment Modal ---- */
+.attach-modal {
+  background: #1e2a3a;
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.attach-dropzone {
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.attach-dropzone:hover,
+.attach-dropzone.dragover {
+  border-color: #f39c12;
+  background: rgba(243, 156, 18, 0.05);
+}
+.modal-action-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.modal-action-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.modal-action-btn.delete:hover {
+  background: rgba(231, 76, 60, 0.3);
+  color: #e74c3c;
+}

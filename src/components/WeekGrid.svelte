@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Day } from '../lib/types';
-  import { getDayDate, formatDate } from '../lib/dates';
+  import { getDayDate, formatDate, getDayKey } from '../lib/dates';
   import DayCard from './DayCard.svelte';
 
   interface Props {
@@ -10,9 +10,11 @@
     ondragstart: (index: number) => void;
     ondrop: (index: number) => void;
     draggingIndex: number | null;
+    attachmentCounts: Record<string, number>;
+    onopenattachments: (index: number) => void;
   }
 
-  let { days, editing, onchange, ondragstart, ondrop, draggingIndex }: Props = $props();
+  let { days, editing, onchange, ondragstart, ondrop, draggingIndex, attachmentCounts, onopenattachments }: Props = $props();
 
   interface Week {
     weekNum: number;
@@ -45,7 +47,7 @@
       <div class="week-header">{week.label}</div>
       <div class="week-grid">
         {#each week.days as { day, index }}
-          <DayCard {day} {index} {editing} {onchange} {ondragstart} {ondrop} {draggingIndex} />
+          <DayCard {day} {index} {editing} {onchange} {ondragstart} {ondrop} {draggingIndex} attachmentCount={attachmentCounts[getDayKey(index)] || 0} {onopenattachments} />
         {/each}
       </div>
     </div>

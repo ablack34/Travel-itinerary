@@ -12,9 +12,11 @@
     ondragstart: (index: number) => void;
     ondrop: (index: number) => void;
     draggingIndex: number | null;
+    attachmentCount: number;
+    onopenattachments: (index: number) => void;
   }
 
-  let { day, index, editing, onchange, ondragstart, ondrop, draggingIndex }: Props = $props();
+  let { day, index, editing, onchange, ondragstart, ondrop, draggingIndex, attachmentCount, onopenattachments }: Props = $props();
 
   const date = $derived(getDayDate(index));
   const dateStr = $derived(formatDate(date));
@@ -93,7 +95,20 @@
         <div class="text-xs text-[#aaa] uppercase">{weekday}</div>
       </div>
     </div>
-    <div class="text-xs text-white/40">Day {dayNum}</div>
+    <div class="flex items-center gap-2">
+      <div class="text-xs text-white/40">Day {dayNum}</div>
+      <button
+        class="attach-btn-inline"
+        class:has-files={attachmentCount > 0}
+        title="Attachments"
+        onclick={(e) => { e.stopPropagation(); onopenattachments(index); }}
+      >
+        📎
+        {#if attachmentCount > 0}
+          <span class="attach-badge-inline">{attachmentCount}</span>
+        {/if}
+      </button>
+    </div>
   </div>
 
   {#if editing}
