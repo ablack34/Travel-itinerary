@@ -1,5 +1,5 @@
 const { BlobServiceClient } = require("@azure/storage-blob");
-const { DefaultAzureCredential } = require("@azure/identity");
+const { ManagedIdentityCredential } = require("@azure/identity");
 
 module.exports = async function (context, req) {
     const { blobPath } = req.body || {};
@@ -22,7 +22,7 @@ module.exports = async function (context, req) {
     try {
         const blobServiceClient = new BlobServiceClient(
             `https://${accountName}.blob.core.windows.net`,
-            new DefaultAzureCredential()
+            new ManagedIdentityCredential()
         );
         const containerClient = blobServiceClient.getContainerClient("attachments");
         const blobClient = containerClient.getBlobClient(blobPath);

@@ -1,5 +1,5 @@
 const { BlobServiceClient } = require("@azure/storage-blob");
-const { DefaultAzureCredential } = require("@azure/identity");
+const { ManagedIdentityCredential } = require("@azure/identity");
 
 module.exports = async function (context, req) {
     const accountName = process.env.AZURE_STORAGE_ACCOUNT_NAME;
@@ -10,7 +10,7 @@ module.exports = async function (context, req) {
 
     const blobServiceClient = new BlobServiceClient(
         `https://${accountName}.blob.core.windows.net`,
-        new DefaultAzureCredential()
+        new ManagedIdentityCredential()
     );
     const containerClient = blobServiceClient.getContainerClient("data");
     const blobClient = containerClient.getBlobClient("itinerary.json");

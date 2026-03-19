@@ -1,5 +1,5 @@
 const { BlobServiceClient, generateBlobSASQueryParameters, BlobSASPermissions } = require("@azure/storage-blob");
-const { DefaultAzureCredential } = require("@azure/identity");
+const { ManagedIdentityCredential } = require("@azure/identity");
 
 module.exports = async function (context, req) {
     const day = req.query.day;
@@ -15,7 +15,7 @@ module.exports = async function (context, req) {
     }
 
     try {
-        const credential = new DefaultAzureCredential();
+        const credential = new ManagedIdentityCredential();
         const blobServiceClient = new BlobServiceClient(
             `https://${accountName}.blob.core.windows.net`,
             credential
