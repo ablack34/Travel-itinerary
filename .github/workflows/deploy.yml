@@ -53,6 +53,12 @@ jobs:
       - name: Install API dependencies
         run: cd api && npm ci
 
+      - name: Deploy Function App
+        uses: Azure/functions-action@v1
+        with:
+          app-name: ${{ steps.bicep.outputs.functionAppName }}
+          package: api
+
       - name: Install frontend dependencies
         run: npm ci
 
@@ -67,4 +73,3 @@ jobs:
           action: upload
           app_location: .
           output_location: dist
-          api_location: api
