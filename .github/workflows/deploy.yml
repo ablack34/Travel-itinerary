@@ -60,10 +60,11 @@ jobs:
         uses: azure/cli@v2
         with:
           inlineScript: |
-            az functionapp deployment source config-zip \
+            az functionapp deploy \
               --name ${{ steps.bicep.outputs.functionAppName }} \
               --resource-group ${{ env.RESOURCE_GROUP }} \
-              --src api.zip
+              --src-path api.zip \
+              --type zip
 
       - name: Install frontend dependencies
         run: npm ci
