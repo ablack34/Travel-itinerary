@@ -53,13 +53,13 @@ jobs:
       - name: Install API dependencies
         run: cd api && npm ci
 
+      - name: Package API
+        run: cd api && zip -r ../api.zip .
+
       - name: Deploy Function App
         uses: azure/cli@v2
         with:
           inlineScript: |
-            cd api
-            zip -r ../api.zip .
-            cd ..
             az functionapp deployment source config-zip \
               --name ${{ steps.bicep.outputs.functionAppName }} \
               --resource-group ${{ env.RESOURCE_GROUP }} \
