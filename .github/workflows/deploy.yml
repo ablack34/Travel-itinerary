@@ -54,10 +54,16 @@ jobs:
         run: cd api && npm ci
 
       - name: Deploy Function App
-        uses: Azure/functions-action@v1
+        uses: azure/cli@v2
         with:
-          app-name: ${{ steps.bicep.outputs.functionAppName }}
-          package: api
+          inlineScript: |
+            cd api
+            zip -r ../api.zip .
+            cd ..
+            az functionapp deployment source config-zip \
+              --name ${{ steps.bicep.outputs.functionAppName }} \
+              --resource-group ${{ env.RESOURCE_GROUP }} \
+              --src api.zip
 
       - name: Install frontend dependencies
         run: npm ci

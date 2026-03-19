@@ -74,7 +74,6 @@ resource functionApp 'Microsoft.Web/sites@2023-01-01' = {
         { name: 'AZURE_STORAGE_ACCOUNT_NAME', value: storageAccount.name }
         { name: 'FUNCTIONS_EXTENSION_VERSION', value: '~4' }
         { name: 'FUNCTIONS_WORKER_RUNTIME', value: 'node' }
-        { name: 'WEBSITE_RUN_FROM_PACKAGE', value: '1' }
       ]
     }
   }
