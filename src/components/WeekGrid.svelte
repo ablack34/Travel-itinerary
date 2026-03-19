@@ -7,9 +7,12 @@
     days: Day[];
     editing: boolean;
     onchange: () => void;
+    ondragstart: (index: number) => void;
+    ondrop: (index: number) => void;
+    draggingIndex: number | null;
   }
 
-  let { days, editing, onchange }: Props = $props();
+  let { days, editing, onchange, ondragstart, ondrop, draggingIndex }: Props = $props();
 
   interface Week {
     weekNum: number;
@@ -42,7 +45,7 @@
       <div class="week-header">{week.label}</div>
       <div class="week-grid">
         {#each week.days as { day, index }}
-          <DayCard {day} {index} {editing} {onchange} />
+          <DayCard {day} {index} {editing} {onchange} {ondragstart} {ondrop} {draggingIndex} />
         {/each}
       </div>
     </div>

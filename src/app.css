@@ -198,3 +198,63 @@ body {
   background: #1e2a3a;
   color: #fff;
 }
+
+/* ---- Drag & Drop ---- */
+.drag-handle {
+  cursor: grab;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.3);
+  user-select: none;
+  line-height: 1;
+  padding: 2px;
+  transition: color 0.2s;
+}
+.drag-handle:hover {
+  color: #f39c12;
+}
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.drag-over {
+  outline: 2px dashed #f39c12;
+  outline-offset: -2px;
+  background: rgba(243, 156, 18, 0.08) !important;
+}
+
+/* ---- Country Confirm Dialog ---- */
+.confirm-btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #fff;
+}
+.confirm-btn.keep {
+  background: rgba(243, 156, 18, 0.2);
+  border: 1px solid #f39c12;
+  color: #f39c12;
+}
+.confirm-btn.keep:hover {
+  background: rgba(243, 156, 18, 0.35);
+}
+.confirm-btn.change {
+  background: rgba(52, 152, 219, 0.2);
+  border: 1px solid #3498db;
+  color: #3498db;
+}
+.confirm-btn.change:hover {
+  background: rgba(52, 152, 219, 0.35);
+}
+.confirm-btn.cancel {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #aaa;
+}
+.confirm-btn.cancel:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}

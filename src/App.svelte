@@ -1,8 +1,9 @@
 <script lang="ts">
-  import type { Itinerary } from './lib/types';
+  import type { Itinerary, Day } from './lib/types';
   import { loadItinerary, saveItinerary } from './lib/api';
   import Header from './components/Header.svelte';
   import WeekGrid from './components/WeekGrid.svelte';
+  import CountryConfirmDialog from './components/CountryConfirmDialog.svelte';
 
   let itinerary = $state<Itinerary | null>(null);
   let error = $state<string | null>(null);
@@ -11,6 +12,17 @@
   let saveStatus = $state<'idle' | 'saving' | 'saved' | 'error'>('idle');
   let saveTimeout: ReturnType<typeof setTimeout> | null = null;
   let savedClearTimeout: ReturnType<typeof setTimeout> | null = null;
+
+  // Drag state
+  let draggingIndex = $state<number | null>(null);
+
+  // Country confirm dialog state
+  let confirmDialog = $state<{
+    movedDay: Day;
+    neighbourCountry: string;
+    fromIndex: number;
+    toIndex: number;
+  } | null>(null);
 
   $effect(() => {
     loadItinerary()
@@ -27,14 +39,12 @@
   function toggleEdit() {
     editing = !editing;
     if (!editing && itinerary) {
-      // Flush any pending save immediately when exiting edit mode
       if (saveTimeout) clearTimeout(saveTimeout);
       doSave();
     }
   }
 
   function onchange() {
-    // Debounced auto-save: 500ms after last change
     if (saveTimeout) clearTimeout(saveTimeout);
     saveTimeout = setTimeout(doSave, 500);
   }
@@ -53,6 +63,72 @@
     } catch {
       saveStatus = 'error';
     }
+  }
+
+  function onDragStart(index: number) {
+    draggingIndex = index;
+  }
+
+  function onDrop(toIndex: number) {
+    if (!itinerary || draggingIndex === null || draggingIndex === toIndex) {
+      draggingIndex = null;
+      return;
+    }
+    const fromIndex = draggingIndex;
+    draggingIndex = null;
+
+    const movedDay = itinerary.days[fromIndex];
+
+    // Determine the dominant neighbour country at the target position
+    const neighbourCountry = getNeighbourCountry(itinerary.days, fromIndex, toIndex);
+
+    if (neighbourCountry && movedDay.country !== neighbourCountry) {
+      // Show confirmation dialog
+      confirmDialog = { movedDay, neighbourCountry, fromIndex, toIndex };
+    } else {
+      // No country conflict — just reorder
+      performReorder(fromIndex, toIndex);
+    }
+  }
+
+  function getNeighbourCountry(days: Day[], fromIndex: number, toIndex: number): string | null {
+    // After removal, what would the neighbours be at toIndex?
+    const without = days.filter((_, i) => i !== fromIndex);
+    const insertAt = toIndex > fromIndex ? toIndex - 1 : toIndex;
+    const before = insertAt > 0 ? without[insertAt - 1] : null;
+    const after = insertAt < without.length ? without[insertAt] : null;
+
+    // Pick the neighbour country (prefer the one that's not travel/home)
+    const candidates = [before?.country, after?.country].filter(
+      (c) => !!c && c !== 'travel' && c !== 'home'
+    ) as string[];
+    return candidates[0] ?? null;
+  }
+
+  function performReorder(fromIndex: number, toIndex: number) {
+    if (!itinerary) return;
+    const [moved] = itinerary.days.splice(fromIndex, 1);
+    const insertAt = toIndex > fromIndex ? toIndex - 1 : toIndex;
+    itinerary.days.splice(insertAt, 0, moved);
+    onchange();
+  }
+
+  function confirmKeep() {
+    if (!confirmDialog) return;
+    performReorder(confirmDialog.fromIndex, confirmDialog.toIndex);
+    confirmDialog = null;
+  }
+
+  function confirmChangeCountry() {
+    if (!confirmDialog || !itinerary) return;
+    const day = itinerary.days[confirmDialog.fromIndex];
+    day.country = confirmDialog.neighbourCountry as Day['country'];
+    performReorder(confirmDialog.fromIndex, confirmDialog.toIndex);
+    confirmDialog = null;
+  }
+
+  function confirmCancel() {
+    confirmDialog = null;
   }
 </script>
 
@@ -77,10 +153,27 @@
       {saveStatus}
       ontoggleedit={toggleEdit}
     />
-    <WeekGrid days={itinerary.days} {editing} {onchange} />
+    <WeekGrid
+      days={itinerary.days}
+      {editing}
+      {onchange}
+      ondragstart={onDragStart}
+      ondrop={onDrop}
+      {draggingIndex}
+    />
     <div class="text-center mt-10 text-[#666] text-sm">
       <p>✨ {itinerary.days.length} Days • 3 Countries • Countless Adventures ✨</p>
       <p class="mt-2">{itinerary.travelers.join(' & ')} • Summer 2026</p>
     </div>
   {/if}
 </main>
+
+{#if confirmDialog}
+  <CountryConfirmDialog
+    movedDay={confirmDialog.movedDay}
+    neighbourCountry={confirmDialog.neighbourCountry}
+    onkeep={confirmKeep}
+    onchangecountry={confirmChangeCountry}
+    oncancel={confirmCancel}
+  />
+{/if}
