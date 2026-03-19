@@ -6,14 +6,14 @@ param location string = resourceGroup().location
 @description('Unique suffix for resource names')
 param resourceSuffix string = uniqueString(resourceGroup().id)
 
-// ---- Cosmos DB (serverless, free tier) ----
+// ---- Cosmos DB (serverless) ----
 resource cosmosAccount 'Microsoft.DocumentDB/databaseAccounts@2024-02-15-preview' = {
   name: 'cosmos-itinerary-${resourceSuffix}'
-  location: location
+  location: 'uksouth'
   kind: 'GlobalDocumentDB'
   properties: {
     databaseAccountOfferType: 'Standard'
-    locations: [{ locationName: location, failoverPriority: 0 }]
+    locations: [{ locationName: 'uksouth', failoverPriority: 0 }]
     capabilities: [{ name: 'EnableServerless' }]
   }
 }
@@ -42,8 +42,8 @@ resource staticWebApp 'Microsoft.Web/staticSites@2023-01-01' = {
   name: 'travel-itinerary-${resourceSuffix}'
   location: location
   sku: {
-    name: 'Free'
-    tier: 'Free'
+    name: 'Standard'
+    tier: 'Standard'
   }
   properties: {
     stagingEnvironmentPolicy: 'Enabled'
