@@ -1,0 +1,1068 @@
+{
+  "title": "Peru • Bolivia • Chile",
+  "startDate": "2026-06-27",
+  "travelers": [
+    "Adam",
+    "Emma"
+  ],
+  "days": [
+    {
+      "id": "d01",
+      "country": "travel",
+      "location": "✈️ Dublin → Lima",
+      "activities": [
+        {
+          "id": "d01-a1",
+          "text": "Depart Dublin 18:20",
+          "isHighlight": false
+        },
+        {
+          "id": "d01-a2",
+          "text": "Iberia via Madrid",
+          "isHighlight": false
+        },
+        {
+          "id": "d01-a3",
+          "text": "Overnight flight",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d02",
+      "country": "peru",
+      "location": "Lima",
+      "activities": [
+        {
+          "id": "d02-a1",
+          "text": "Arrive Lima 05:25",
+          "isHighlight": false
+        },
+        {
+          "id": "d02-a2",
+          "text": "Transfer to accommodation",
+          "isHighlight": false
+        },
+        {
+          "id": "d02-a3",
+          "text": "Rest & light explore",
+          "isHighlight": false
+        }
+      ],
+      "links": [
+        {
+          "id": "d02-l1",
+          "label": "Alpes Lima Kennedy Park",
+          "url": "https://www.hostelworld.com/pwa/hosteldetails.php/Alpes-Lima-Kennedy-Park/Lima/277492",
+          "type": "accommodation"
+        }
+      ]
+    },
+    {
+      "id": "d03",
+      "country": "peru",
+      "location": "🇵🇪 Lima",
+      "activities": [
+        {
+          "id": "d03-a1",
+          "text": "Miraflores & Barranco",
+          "isHighlight": false
+        },
+        {
+          "id": "d03-a2",
+          "text": "Historic centre & Plaza de Armas",
+          "isHighlight": false
+        },
+        {
+          "id": "d03-a3",
+          "text": "🍽️ Ceviche & Pisco Sour",
+          "isHighlight": false
+        }
+      ],
+      "links": [
+        {
+          "id": "d03-l1",
+          "label": "Alpes Lima Kennedy Park",
+          "url": "https://www.hostelworld.com/pwa/hosteldetails.php/Alpes-Lima-Kennedy-Park/Lima/277492",
+          "type": "accommodation"
+        }
+      ]
+    },
+    {
+      "id": "d04",
+      "country": "peru",
+      "location": "🇵🇪 Lima → Paracas",
+      "activities": [
+        {
+          "id": "d04-a1",
+          "text": "🚌 07:00 Peru Hop Stage 1",
+          "isHighlight": false
+        },
+        {
+          "id": "d04-a2",
+          "text": "Bread oven + slave tunnels stops",
+          "isHighlight": false
+        },
+        {
+          "id": "d04-a3",
+          "text": "Arrive 13:30",
+          "isHighlight": false
+        },
+        {
+          "id": "d04-a4",
+          "text": "🌅 15:30 Golden Shadows Trek",
+          "isHighlight": false
+        }
+      ],
+      "links": [
+        {
+          "id": "d04-l1",
+          "label": "Viajero Paracas Hostel",
+          "url": "https://www.hostelworld.com/pwa/hosteldetails.php/Viajero-Paracas-Hostel/Paracas/78671?from=2026-06-30&to=2026-07-01&guests=2&origin=microsite",
+          "type": "accommodation"
+        }
+      ]
+    },
+    {
+      "id": "d05",
+      "country": "peru",
+      "location": "🇵🇪 Paracas → Huacachina",
+      "activities": [
+        {
+          "id": "d05-a1",
+          "text": "🦭 07:30 Ballestas Islands",
+          "isHighlight": false
+        },
+        {
+          "id": "d05-a2",
+          "text": "🚌 10:00 Peru Hop Stage 2",
+          "isHighlight": false
+        },
+        {
+          "id": "d05-a3",
+          "text": "🍷 13:00 Pisco vineyard tour",
+          "isHighlight": false
+        },
+        {
+          "id": "d05-a4",
+          "text": "🏜️ 16:00 Dune buggies!",
+          "isHighlight": false
+        }
+      ],
+      "links": [
+        {
+          "id": "d05-l1",
+          "label": "Viajero Huacachina Hostel",
+          "url": "https://www.hostelworld.com/pwa/hosteldetails.php/Viajero-Huacachina-Hostel/Huacachina/321972?from=2026-07-01&to=2026-07-02&guests=2",
+          "type": "accommodation"
+        }
+      ]
+    },
+    {
+      "id": "d06",
+      "country": "peru",
+      "location": "🇵🇪 Huacachina → Arequipa",
+      "activities": [
+        {
+          "id": "d06-a1",
+          "text": "Morning at oasis",
+          "isHighlight": false
+        },
+        {
+          "id": "d06-a2",
+          "text": "🚌 14:00 Peru Hop Stage 3",
+          "isHighlight": false
+        },
+        {
+          "id": "d06-a3",
+          "text": "16:30 Nazca Viewing Tower",
+          "isHighlight": false
+        },
+        {
+          "id": "d06-a4",
+          "text": "🌙 Overnight bus to Arequipa",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d07",
+      "country": "peru",
+      "location": "🇵🇪 Arequipa",
+      "activities": [
+        {
+          "id": "d07-a1",
+          "text": "Arrive 05:30",
+          "isHighlight": false
+        },
+        {
+          "id": "d07-a2",
+          "text": "Plaza de Armas & Santa Catalina",
+          "isHighlight": false
+        },
+        {
+          "id": "d07-a3",
+          "text": "🍽️ Rocoto relleno & queso helado",
+          "isHighlight": false
+        },
+        {
+          "id": "d07-a4",
+          "text": "Rooftop dinner, volcano views",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d08",
+      "country": "peru",
+      "location": "🇵🇪 Arequipa → Colca Canyon",
+      "activities": [
+        {
+          "id": "d08-a1",
+          "text": "🚌 08:00 Colca 2-day tour",
+          "isHighlight": false
+        },
+        {
+          "id": "d08-a2",
+          "text": "Viewpoints & high pass",
+          "isHighlight": false
+        },
+        {
+          "id": "d08-a3",
+          "text": "♨️ Evening hot springs",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d09",
+      "country": "peru",
+      "location": "🇵🇪 Colca → Arequipa",
+      "activities": [
+        {
+          "id": "d09-a1",
+          "text": "🦅 Cruz del Cóndor viewpoint",
+          "isHighlight": false
+        },
+        {
+          "id": "d09-a2",
+          "text": "Colca villages & viewpoints",
+          "isHighlight": false
+        },
+        {
+          "id": "d09-a3",
+          "text": "Return to Arequipa, relax",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d10",
+      "country": "peru",
+      "location": "🇵🇪 Arequipa → Cusco",
+      "activities": [
+        {
+          "id": "d10-a1",
+          "text": "Yanahuara viewpoint",
+          "isHighlight": false
+        },
+        {
+          "id": "d10-a2",
+          "text": "Free day in Arequipa",
+          "isHighlight": false
+        },
+        {
+          "id": "d10-a3",
+          "text": "✈️ 18:05 flight to Cusco",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d11",
+      "country": "peru",
+      "location": "🇵🇪 Cusco",
+      "activities": [
+        {
+          "id": "d11-a1",
+          "text": "☕ Acclimatization day",
+          "isHighlight": false
+        },
+        {
+          "id": "d11-a2",
+          "text": "Plaza de Armas, San Pedro market",
+          "isHighlight": false
+        },
+        {
+          "id": "d11-a3",
+          "text": "Coca tea & easy pace at 3,400m",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d12",
+      "country": "peru",
+      "location": "🇵🇪 Sacred Valley",
+      "activities": [
+        {
+          "id": "d12-a1",
+          "text": "🏛️ Pisac ruins & market",
+          "isHighlight": false
+        },
+        {
+          "id": "d12-a2",
+          "text": "Ollantaytambo fortress",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d13",
+      "country": "peru",
+      "location": "🇵🇪 Sacred Valley",
+      "activities": [
+        {
+          "id": "d13-a1",
+          "text": "🌀 Moray terraces",
+          "isHighlight": false
+        },
+        {
+          "id": "d13-a2",
+          "text": "🧂 Maras salt mines",
+          "isHighlight": false
+        },
+        {
+          "id": "d13-a3",
+          "text": "Chinchero",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d14",
+      "country": "peru",
+      "location": "🇵🇪 Cusco",
+      "activities": [
+        {
+          "id": "d14-a1",
+          "text": "🌈 Rainbow Mountain!",
+          "isHighlight": true
+        },
+        {
+          "id": "d14-a2",
+          "text": "High altitude day trip (5,200m)",
+          "isHighlight": false
+        },
+        {
+          "id": "d14-a3",
+          "text": "Rest & early dinner",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d15",
+      "country": "peru",
+      "location": "🇵🇪 Cusco",
+      "activities": [
+        {
+          "id": "d15-a1",
+          "text": "🏛️ Sacsayhuáman ruins",
+          "isHighlight": false
+        },
+        {
+          "id": "d15-a2",
+          "text": "San Blas neighbourhood",
+          "isHighlight": false
+        },
+        {
+          "id": "d15-a3",
+          "text": "Recovery day after Rainbow Mtn",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d16",
+      "country": "peru",
+      "location": "🇵🇪 Cusco",
+      "activities": [
+        {
+          "id": "d16-a1",
+          "text": "Easy morning, pack for trek",
+          "isHighlight": false
+        },
+        {
+          "id": "d16-a2",
+          "text": "🎯 5pm Trek Briefing",
+          "isHighlight": true
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d17",
+      "country": "peru",
+      "location": "🇵🇪 Salkantay Trek",
+      "activities": [
+        {
+          "id": "d17-a1",
+          "text": "🥾 Trek Day 1",
+          "isHighlight": true
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d18",
+      "country": "peru",
+      "location": "🇵🇪 Salkantay Trek",
+      "activities": [
+        {
+          "id": "d18-a1",
+          "text": "🥾 Trek Day 2",
+          "isHighlight": true
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d19",
+      "country": "peru",
+      "location": "🇵🇪 Salkantay Trek",
+      "activities": [
+        {
+          "id": "d19-a1",
+          "text": "🥾 Trek Day 3",
+          "isHighlight": true
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d20",
+      "country": "peru",
+      "location": "🇵🇪 Salkantay Trek",
+      "activities": [
+        {
+          "id": "d20-a1",
+          "text": "🥾 Trek Day 4",
+          "isHighlight": true
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d21",
+      "country": "peru",
+      "location": "🇵🇪 Machu Picchu!",
+      "activities": [
+        {
+          "id": "d21-a1",
+          "text": "🏛️ MACHU PICCHU!",
+          "isHighlight": true
+        },
+        {
+          "id": "d21-a2",
+          "text": "Early morning entry",
+          "isHighlight": false
+        },
+        {
+          "id": "d21-a3",
+          "text": "Return to Cusco",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d22",
+      "country": "peru",
+      "location": "🇵🇪 Lake Titicaca",
+      "activities": [
+        {
+          "id": "d22-a1",
+          "text": "🏝️ Uros floating islands",
+          "isHighlight": false
+        },
+        {
+          "id": "d22-a2",
+          "text": "Taquile or Amantaní",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d23",
+      "country": "bolivia",
+      "location": "Copacabana",
+      "activities": [
+        {
+          "id": "d23-a1",
+          "text": "🚌 Peru Hop bus from Puno",
+          "isHighlight": false
+        },
+        {
+          "id": "d23-a2",
+          "text": "🛂 Border crossing",
+          "isHighlight": false
+        },
+        {
+          "id": "d23-a3",
+          "text": "⛪ Explore Copacabana",
+          "isHighlight": false
+        },
+        {
+          "id": "d23-a4",
+          "text": "🌅 Cerro Calvario sunset",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d24",
+      "country": "bolivia",
+      "location": "🇧🇴 Isla del Sol",
+      "activities": [
+        {
+          "id": "d24-a1",
+          "text": "🚤 Boat to island",
+          "isHighlight": false
+        },
+        {
+          "id": "d24-a2",
+          "text": "🏛️ Inca ruins hike",
+          "isHighlight": false
+        },
+        {
+          "id": "d24-a3",
+          "text": "Stunning lake views",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d25",
+      "country": "bolivia",
+      "location": "🇧🇴 La Paz",
+      "activities": [
+        {
+          "id": "d25-a1",
+          "text": "🚌 Travel from Copacabana",
+          "isHighlight": false
+        },
+        {
+          "id": "d25-a2",
+          "text": "🚡 Teleférico rides",
+          "isHighlight": false
+        },
+        {
+          "id": "d25-a3",
+          "text": "City viewpoints",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d26",
+      "country": "bolivia",
+      "location": "🇧🇴 La Paz",
+      "activities": [
+        {
+          "id": "d26-a1",
+          "text": "🚴 DEATH ROAD!",
+          "isHighlight": true
+        },
+        {
+          "id": "d26-a2",
+          "text": "64km downhill bike",
+          "isHighlight": false
+        },
+        {
+          "id": "d26-a3",
+          "text": "🍽️ Celebration dinner",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d27",
+      "country": "bolivia",
+      "location": "🇧🇴 La Paz → Sucre",
+      "activities": [
+        {
+          "id": "d27-a1",
+          "text": "☕ Slow start & café time",
+          "isHighlight": false
+        },
+        {
+          "id": "d27-a2",
+          "text": "🧙 Witches' Market & centre",
+          "isHighlight": false
+        },
+        {
+          "id": "d27-a3",
+          "text": "🌙 Valle de la Luna",
+          "isHighlight": false
+        },
+        {
+          "id": "d27-a4",
+          "text": "✈️ Evening flight to Sucre",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d28",
+      "country": "bolivia",
+      "location": "🇧🇴 Sucre",
+      "activities": [
+        {
+          "id": "d28-a1",
+          "text": "🏛️ Historic centre",
+          "isHighlight": false
+        },
+        {
+          "id": "d28-a2",
+          "text": "🍫 Chocolate museum",
+          "isHighlight": false
+        },
+        {
+          "id": "d28-a3",
+          "text": "Colonial architecture",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d29",
+      "country": "bolivia",
+      "location": "🇧🇴 Sucre → Potosí → Uyuni",
+      "activities": [
+        {
+          "id": "d29-a1",
+          "text": "🚌 Bus to Potosí",
+          "isHighlight": false
+        },
+        {
+          "id": "d29-a2",
+          "text": "⛏️ Mine tour (Cerro Rico)",
+          "isHighlight": false
+        },
+        {
+          "id": "d29-a3",
+          "text": "Overnight bus to Uyuni",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d30",
+      "country": "bolivia",
+      "location": "🇧🇴 Salar de Uyuni",
+      "activities": [
+        {
+          "id": "d30-a1",
+          "text": "🧂 3-Day Uyuni Tour (Day 1)",
+          "isHighlight": true
+        },
+        {
+          "id": "d30-a2",
+          "text": "🚂 Train cemetery",
+          "isHighlight": false
+        },
+        {
+          "id": "d30-a3",
+          "text": "📸 Perspective photos",
+          "isHighlight": false
+        },
+        {
+          "id": "d30-a4",
+          "text": "🌟 Salt hotel & stargazing",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d31",
+      "country": "bolivia",
+      "location": "🇧🇴 Eduardo Avaroa Reserve",
+      "activities": [
+        {
+          "id": "d31-a1",
+          "text": "🧂 3-Day Uyuni Tour (Day 2)",
+          "isHighlight": true
+        },
+        {
+          "id": "d31-a2",
+          "text": "🔴 Laguna Colorada",
+          "isHighlight": false
+        },
+        {
+          "id": "d31-a3",
+          "text": "🦩 Flamingos",
+          "isHighlight": false
+        },
+        {
+          "id": "d31-a4",
+          "text": "Rock formations",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d32",
+      "country": "chile",
+      "location": "→ San Pedro de Atacama",
+      "activities": [
+        {
+          "id": "d32-a1",
+          "text": "🧂 3-Day Uyuni Tour (Day 3)",
+          "isHighlight": true
+        },
+        {
+          "id": "d32-a2",
+          "text": "💨 Sol de Mañana geysers",
+          "isHighlight": false
+        },
+        {
+          "id": "d32-a3",
+          "text": "🟢 Laguna Verde",
+          "isHighlight": false
+        },
+        {
+          "id": "d32-a4",
+          "text": "🛂 Border → San Pedro",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d33",
+      "country": "chile",
+      "location": "🇨🇱 San Pedro de Atacama",
+      "activities": [
+        {
+          "id": "d33-a1",
+          "text": "😴 Sleep in, recover",
+          "isHighlight": false
+        },
+        {
+          "id": "d33-a2",
+          "text": "Explore town",
+          "isHighlight": false
+        },
+        {
+          "id": "d33-a3",
+          "text": "🌙 Valle de la Luna",
+          "isHighlight": true
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d34",
+      "country": "chile",
+      "location": "🇨🇱 San Pedro de Atacama",
+      "activities": [
+        {
+          "id": "d34-a1",
+          "text": "🏔️ Altiplanic lagoons",
+          "isHighlight": false
+        },
+        {
+          "id": "d34-a2",
+          "text": "Atacama salt flats",
+          "isHighlight": false
+        },
+        {
+          "id": "d34-a3",
+          "text": "🦩 More flamingos!",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d35",
+      "country": "chile",
+      "location": "🇨🇱 San Pedro de Atacama",
+      "activities": [
+        {
+          "id": "d35-a1",
+          "text": "🌋 El Tatio geysers (4am tour)",
+          "isHighlight": false
+        },
+        {
+          "id": "d35-a2",
+          "text": "Back by noon, rest",
+          "isHighlight": false
+        },
+        {
+          "id": "d35-a3",
+          "text": "🌌 Stargazing tour evening",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d36",
+      "country": "travel",
+      "location": "🇨🇱 → Santiago",
+      "activities": [
+        {
+          "id": "d36-a1",
+          "text": "✈️ Fly San Pedro → Santiago",
+          "isHighlight": false
+        },
+        {
+          "id": "d36-a2",
+          "text": "Via Calama (~1hr shuttle)",
+          "isHighlight": false
+        },
+        {
+          "id": "d36-a3",
+          "text": "Arrive Santiago, Barrio Lastarria",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d37",
+      "country": "chile",
+      "location": "🇨🇱 Santiago",
+      "activities": [
+        {
+          "id": "d37-a1",
+          "text": "⛰️ Cerro San Cristóbal",
+          "isHighlight": false
+        },
+        {
+          "id": "d37-a2",
+          "text": "Bellavista & La Chascona",
+          "isHighlight": false
+        },
+        {
+          "id": "d37-a3",
+          "text": "🍽️ Chilean dinner",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d38",
+      "country": "chile",
+      "location": "🇨🇱 Valle Nevado",
+      "activities": [
+        {
+          "id": "d38-a1",
+          "text": "⛷️ Ski Day 1!",
+          "isHighlight": true
+        },
+        {
+          "id": "d38-a2",
+          "text": "Beginner lessons for Emma",
+          "isHighlight": false
+        },
+        {
+          "id": "d38-a3",
+          "text": "Transfer bus from Santiago",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d39",
+      "country": "chile",
+      "location": "🇨🇱 Valle Nevado",
+      "activities": [
+        {
+          "id": "d39-a1",
+          "text": "⛷️ Ski Day 2!",
+          "isHighlight": true
+        },
+        {
+          "id": "d39-a2",
+          "text": "Practice day — more runs!",
+          "isHighlight": false
+        },
+        {
+          "id": "d39-a3",
+          "text": "Transfer back to Santiago",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d40",
+      "country": "chile",
+      "location": "🇨🇱 Valparaíso day trip",
+      "activities": [
+        {
+          "id": "d40-a1",
+          "text": "🚌 Bus to Valparaíso (~1.5hr)",
+          "isHighlight": false
+        },
+        {
+          "id": "d40-a2",
+          "text": "🎨 Street art & funiculars",
+          "isHighlight": false
+        },
+        {
+          "id": "d40-a3",
+          "text": "🌅 Harbour sunset, bus back",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d41",
+      "country": "chile",
+      "location": "🇨🇱 Santiago",
+      "activities": [
+        {
+          "id": "d41-a1",
+          "text": "🐟 Mercado Central seafood",
+          "isHighlight": false
+        },
+        {
+          "id": "d41-a2",
+          "text": "Barrio Italia",
+          "isHighlight": false
+        },
+        {
+          "id": "d41-a3",
+          "text": "🎶 Nightlife",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d42",
+      "country": "chile",
+      "location": "🇨🇱 Wine valley day trip",
+      "activities": [
+        {
+          "id": "d42-a1",
+          "text": "🍷 Casablanca or Maipo Valley",
+          "isHighlight": false
+        },
+        {
+          "id": "d42-a2",
+          "text": "Wine tastings at 2–3 vineyards",
+          "isHighlight": false
+        },
+        {
+          "id": "d42-a3",
+          "text": "Return to Santiago",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d43",
+      "country": "chile",
+      "location": "🇨🇱 Santiago",
+      "activities": [
+        {
+          "id": "d43-a1",
+          "text": "🛒 Souvenirs & last-minute shopping",
+          "isHighlight": false
+        },
+        {
+          "id": "d43-a2",
+          "text": "Pack bags",
+          "isHighlight": false
+        },
+        {
+          "id": "d43-a3",
+          "text": "🍻 Last night out!",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d44",
+      "country": "travel",
+      "location": "✈️ Santiago → Dublin",
+      "activities": [
+        {
+          "id": "d44-a1",
+          "text": "Transfer to airport",
+          "isHighlight": false
+        },
+        {
+          "id": "d44-a2",
+          "text": "✈️ Depart 11:40",
+          "isHighlight": false
+        },
+        {
+          "id": "d44-a3",
+          "text": "Iberia via Madrid",
+          "isHighlight": false
+        },
+        {
+          "id": "d44-a4",
+          "text": "Overnight flight",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d45",
+      "country": "home",
+      "location": "🏠 Home",
+      "activities": [
+        {
+          "id": "d45-a1",
+          "text": "Arrive Dublin 09:05",
+          "isHighlight": false
+        },
+        {
+          "id": "d45-a2",
+          "text": "🎉 Trip complete!",
+          "isHighlight": false
+        },
+        {
+          "id": "d45-a3",
+          "text": "Rest & memories",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    }
+  ]
+}
