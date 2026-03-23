@@ -525,5 +525,13 @@
       ],
       "links": []
     }
+  ],
+  "todos": [
+    { "id": "t01", "text": "Research altitude sickness prevention for Cusco & Bolivia", "done": false, "assignee": "Emma" },
+    { "id": "t02", "text": "Compare Lima airport transfer options (taxi vs bus)", "done": false, "assignee": "Adam" },
+    { "id": "t03", "text": "Book Death Road cycling tour in La Paz", "done": false, "assignee": "Adam" },
+    { "id": "t04", "text": "Check visa requirements for Bolivia", "done": false, "assignee": "Emma" },
+    { "id": "t05", "text": "Research best travel insurance for South America", "done": false, "assignee": "Adam" },
+    { "id": "t06", "text": "Look into Inca Trail permits & availability", "done": false, "assignee": "Emma" }
   ]
 }

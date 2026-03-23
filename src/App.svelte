@@ -3,6 +3,7 @@
   import { loadItinerary, saveItinerary, listFiles } from './lib/api';
   import { getDayKey, formatDate, getDayDate, formatWeekday } from './lib/dates';
   import Header from './components/Header.svelte';
+  import TodoList from './components/TodoList.svelte';
   import WeekGrid from './components/WeekGrid.svelte';
   import CountryConfirmDialog from './components/CountryConfirmDialog.svelte';
   import AttachmentModal from './components/AttachmentModal.svelte';
@@ -188,6 +189,11 @@
       {editing}
       {saveStatus}
       ontoggleedit={toggleEdit}
+    />
+    <TodoList
+      todos={itinerary.todos}
+      travelers={itinerary.travelers}
+      {onchange}
     />
     <WeekGrid
       days={itinerary.days}

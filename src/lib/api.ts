@@ -2,23 +2,26 @@ import type { Itinerary } from './types';
 import seedData from './itinerary-seed.json';
 
 export async function loadItinerary(): Promise<Itinerary> {
+  let data: Itinerary | undefined;
   try {
     const res = await fetch('/api/itinerary');
     if (res.ok) {
       const contentType = res.headers.get('content-type') || '';
       if (contentType.includes('application/json')) {
-        return res.json();
+        data = await res.json();
       }
     }
-    if (res.status === 404) {
+    if (!data && res.status === 404) {
       const seed = seedData as Itinerary;
       await saveItinerary(seed);
-      return seed;
+      data = seed;
     }
   } catch {
     // API unreachable (e.g. standalone Vite dev) — use seed data
   }
-  return seedData as Itinerary;
+  if (!data) data = seedData as Itinerary;
+  if (!data.todos) data.todos = [];
+  return data;
 }
 
 export async function saveItinerary(itinerary: Itinerary): Promise<void> {
