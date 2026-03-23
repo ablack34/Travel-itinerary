@@ -1,6 +1,8 @@
 import type { Itinerary } from './types';
 import seedData from './itinerary-seed.json';
 
+const LOCAL_KEY = 'travel-itinerary-data';
+
 export async function loadItinerary(): Promise<Itinerary> {
   let data: Itinerary | undefined;
   try {
@@ -17,7 +19,11 @@ export async function loadItinerary(): Promise<Itinerary> {
       data = seed;
     }
   } catch {
-    // API unreachable (e.g. standalone Vite dev) — use seed data
+    // API unreachable — try localStorage, then seed
+    const stored = localStorage.getItem(LOCAL_KEY);
+    if (stored) {
+      try { data = JSON.parse(stored); } catch { /* ignore bad data */ }
+    }
   }
   if (!data) data = seedData as Itinerary;
   if (!data.todos) data.todos = [];
@@ -25,6 +31,7 @@ export async function loadItinerary(): Promise<Itinerary> {
 }
 
 export async function saveItinerary(itinerary: Itinerary): Promise<void> {
+  localStorage.setItem(LOCAL_KEY, JSON.stringify(itinerary));
   try {
     const res = await fetch('/api/itinerary', {
       method: 'PUT',
@@ -35,7 +42,7 @@ export async function saveItinerary(itinerary: Itinerary): Promise<void> {
       console.warn('Failed to save itinerary — API may not be available');
     }
   } catch {
-    console.warn('Save skipped — API not reachable');
+    console.warn('Save skipped — API not reachable (saved to localStorage)');
   }
 }
 
