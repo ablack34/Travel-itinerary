@@ -191,9 +191,7 @@
       ontoggleedit={toggleEdit}
     />
     <TodoList
-      todos={itinerary.todos}
       travelers={itinerary.travelers}
-      {onchange}
     />
     <WeekGrid
       days={itinerary.days}

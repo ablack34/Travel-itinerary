@@ -1,10 +1,13 @@
-import type { Itinerary } from './types';
+import type { Itinerary, TodoItem } from './types';
 import seedData from './itinerary-seed.json';
 
 const LOCAL_KEY = 'travel-itinerary-data';
+const TODOS_KEY = 'travel-itinerary-todos';
 
 export async function loadItinerary(): Promise<Itinerary> {
   let data: Itinerary | undefined;
+
+  // 1. Try API (works in production / swa start)
   try {
     const res = await fetch('/api/itinerary');
     if (res.ok) {
@@ -19,14 +22,19 @@ export async function loadItinerary(): Promise<Itinerary> {
       data = seed;
     }
   } catch {
-    // API unreachable — try localStorage, then seed
+    // API unreachable
+  }
+
+  // 2. Fallback to localStorage
+  if (!data) {
     const stored = localStorage.getItem(LOCAL_KEY);
     if (stored) {
-      try { data = JSON.parse(stored); } catch { /* ignore bad data */ }
+      try { data = JSON.parse(stored); } catch { /* ignore */ }
     }
   }
-  if (!data) data = seedData as Itinerary;
-  if (!data.todos) data.todos = [];
+
+  // 3. Last resort — seed data
+  if (!data) data = structuredClone(seedData) as Itinerary;
   return data;
 }
 
@@ -43,6 +51,51 @@ export async function saveItinerary(itinerary: Itinerary): Promise<void> {
     }
   } catch {
     console.warn('Save skipped — API not reachable (saved to localStorage)');
+  }
+}
+
+// ---- Todo APIs ----
+
+export async function loadTodos(): Promise<TodoItem[]> {
+  // 1. Try API
+  try {
+    const res = await fetch('/api/todos');
+    if (res.ok) {
+      const contentType = res.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        const data = await res.json();
+        if (Array.isArray(data)) {
+          localStorage.setItem(TODOS_KEY, JSON.stringify(data));
+          return data;
+        }
+      }
+    }
+  } catch {
+    // API unreachable
+  }
+
+  // 2. Fallback to localStorage
+  const stored = localStorage.getItem(TODOS_KEY);
+  if (stored) {
+    try {
+      const parsed = JSON.parse(stored);
+      if (Array.isArray(parsed)) return parsed;
+    } catch { /* ignore */ }
+  }
+
+  return [];
+}
+
+export async function saveTodos(todos: TodoItem[]): Promise<void> {
+  localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
+  try {
+    await fetch('/api/todos', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(todos),
+    });
+  } catch {
+    console.warn('Todo save skipped — API not reachable (saved to localStorage)');
   }
 }
 

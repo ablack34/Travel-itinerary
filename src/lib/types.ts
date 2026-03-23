@@ -3,7 +3,6 @@ export interface Itinerary {
   startDate: string;
   travelers: string[];
   days: Day[];
-  todos: TodoItem[];
 }
 
 export interface TodoItem {

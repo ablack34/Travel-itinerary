@@ -1,38 +1,56 @@
 <script lang="ts">
   import type { TodoItem } from '../lib/types';
+  import { loadTodos, saveTodos } from '../lib/api';
 
   interface Props {
-    todos: TodoItem[];
     travelers: string[];
-    onchange: () => void;
   }
 
-  let { todos, travelers, onchange }: Props = $props();
+  let { travelers }: Props = $props();
 
+  let todos = $state<TodoItem[]>([]);
+  let loaded = $state(false);
   let editingId = $state<string | null>(null);
-
   let collapsed = $state(false);
 
   const doneCount = $derived(todos.filter((t) => t.done).length);
 
+  $effect(() => {
+    loadTodos().then((data) => {
+      todos = data;
+      loaded = true;
+    });
+  });
+
+  async function save() {
+    await saveTodos(todos);
+  }
+
+  function stopEditing(e?: FocusEvent) {
+    if (e) {
+      const related = e.relatedTarget as HTMLElement | null;
+      if (related?.closest('.todo-edit-row')) return;
+    }
+    editingId = null;
+    save();
+  }
+
   function toggle(index: number) {
     todos[index].done = !todos[index].done;
-    onchange();
+    save();
   }
 
   function updateText(index: number, text: string) {
     todos[index].text = text;
-    onchange();
   }
 
   function updateAssignee(index: number, assignee: string) {
     todos[index].assignee = assignee;
-    onchange();
   }
 
   function remove(index: number) {
     todos.splice(index, 1);
-    onchange();
+    save();
   }
 
   function add() {
@@ -44,7 +62,6 @@
       assignee: travelers[0] ?? '',
     });
     editingId = id;
-    onchange();
   }
 </script>
 
@@ -92,21 +109,15 @@
                   value={todo.text}
                   placeholder="What needs researching..."
                   oninput={(e) => updateText(i, (e.target as HTMLInputElement).value)}
-                  onblur={(e) => {
-                    const related = (e as FocusEvent).relatedTarget as HTMLElement | null;
-                    if (!related?.closest('.todo-edit-row')) editingId = null;
-                  }}
-                  onkeydown={(e) => { if (e.key === 'Enter') editingId = null; }}
+                  onblur={(e) => stopEditing(e)}
+                  onkeydown={(e) => { if (e.key === 'Enter') stopEditing(); }}
                   autofocus
                 />
                 <select
                   class="edit-select text-xs"
                   value={todo.assignee}
                   onchange={(e) => updateAssignee(i, (e.target as HTMLSelectElement).value)}
-                  onblur={(e) => {
-                    const related = (e as FocusEvent).relatedTarget as HTMLElement | null;
-                    if (!related?.closest('.todo-edit-row')) editingId = null;
-                  }}
+                  onblur={(e) => stopEditing(e)}
                 >
                   {#each travelers as t}
                     <option value={t}>{t}</option>
