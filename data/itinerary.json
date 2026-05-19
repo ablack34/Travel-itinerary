@@ -213,7 +213,14 @@
           "isHighlight": false
         }
       ],
-      "links": []
+      "links": [
+        {
+          "id": "f5cfe4fd-f2d6-49d9-b1b1-425ba071ce9e",
+          "label": "",
+          "url": "",
+          "type": "other"
+        }
+      ]
     },
     {
       "id": "d08",
