@@ -3,11 +3,17 @@ name: Deploy Travel Itinerary
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'data/**'
   workflow_dispatch:
 
 permissions:
   id-token: write
   contents: read
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   RESOURCE_GROUP: rg-travel-itinerary
