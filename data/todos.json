@@ -2,13 +2,13 @@
   {
     "id": "06813f36-3101-43c5-b1c0-2b38bd70ca3c",
     "text": "Arequipa accomodation",
-    "done": true,
+    "done": false,
     "assignee": "Emma"
   },
   {
     "id": "8ed6189e-2ab7-4e95-b082-24a224af4fe6",
     "text": "Colca canyon ",
-    "done": true,
+    "done": false,
     "assignee": "Emma"
   },
   {
