@@ -467,7 +467,14 @@
           "isHighlight": true
         }
       ],
-      "links": []
+      "links": [
+        {
+          "id": "914d6881-4696-466a-bf62-44547e3a0ad2",
+          "label": "",
+          "url": "",
+          "type": "other"
+        }
+      ]
     },
     {
       "id": "d17",
