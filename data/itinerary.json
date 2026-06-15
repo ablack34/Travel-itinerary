@@ -162,13 +162,8 @@
     {
       "id": "d07",
       "country": "peru",
-      "location": "🇵🇪 Huacachin",
+      "location": "🇵🇪 Huacachina",
       "activities": [
-        {
-          "id": "d07-a1",
-          "text": "Arrive 05:30",
-          "isHighlight": false
-        },
         {
           "id": "d07-a2",
           "text": "Plaza de Armas & Santa Catalina",
