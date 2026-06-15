@@ -246,11 +246,6 @@
       "location": "🇵🇪 Arequipa",
       "activities": [
         {
-          "id": "d11-a1",
-          "text": "☕ Acclimatization day",
-          "isHighlight": false
-        },
-        {
           "id": "d11-a2",
           "text": "Plaza de Armas, San Pedro market",
           "isHighlight": false
