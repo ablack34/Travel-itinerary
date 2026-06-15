@@ -486,13 +486,7 @@
       "id": "d25",
       "country": "peru",
       "location": "🇵🇪 Cusco",
-      "activities": [
-        {
-          "id": "d25-a3",
-          "text": "City viewpoints",
-          "isHighlight": false
-        }
-      ],
+      "activities": [],
       "links": []
     },
     {
