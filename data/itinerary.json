@@ -472,18 +472,7 @@
       "id": "d23",
       "country": "peru",
       "location": "Cusco",
-      "activities": [
-        {
-          "id": "d23-a3",
-          "text": "⛪ Explore Copacabana",
-          "isHighlight": false
-        },
-        {
-          "id": "d23-a4",
-          "text": "🌅 Cerro Calvario sunset",
-          "isHighlight": false
-        }
-      ],
+      "activities": [],
       "links": []
     },
     {
