@@ -465,13 +465,7 @@
       "id": "d22",
       "country": "peru",
       "location": "🇵🇪 Cusco",
-      "activities": [
-        {
-          "id": "d22-a2",
-          "text": "Taquile or Amantaní",
-          "isHighlight": false
-        }
-      ],
+      "activities": [],
       "links": []
     },
     {
