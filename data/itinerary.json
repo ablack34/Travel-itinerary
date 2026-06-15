@@ -479,13 +479,7 @@
       "id": "d24",
       "country": "peru",
       "location": "🇵🇪 Cusco",
-      "activities": [
-        {
-          "id": "d24-a3",
-          "text": "Stunning lake views",
-          "isHighlight": false
-        }
-      ],
+      "activities": [],
       "links": []
     },
     {
