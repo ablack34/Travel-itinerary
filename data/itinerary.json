@@ -160,34 +160,6 @@
       ]
     },
     {
-      "id": "d06",
-      "country": "peru",
-      "location": "🇵🇪 Huacachina → Arequipa",
-      "activities": [
-        {
-          "id": "d06-a1",
-          "text": "Morning at oasis",
-          "isHighlight": false
-        },
-        {
-          "id": "d06-a2",
-          "text": "🚌 14:00 Peru Hop Stage 3",
-          "isHighlight": false
-        },
-        {
-          "id": "d06-a3",
-          "text": "16:30 Nazca Viewing Tower",
-          "isHighlight": false
-        },
-        {
-          "id": "d06-a4",
-          "text": "🌙 Overnight bus to Arequipa",
-          "isHighlight": false
-        }
-      ],
-      "links": []
-    },
-    {
       "id": "d07",
       "country": "peru",
       "location": "🇵🇪 Arequipa",
@@ -210,6 +182,34 @@
         {
           "id": "d07-a4",
           "text": "Rooftop dinner, volcano views",
+          "isHighlight": false
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "d06",
+      "country": "peru",
+      "location": "🇵🇪 Huacachina → Arequipa",
+      "activities": [
+        {
+          "id": "d06-a1",
+          "text": "Morning at oasis",
+          "isHighlight": false
+        },
+        {
+          "id": "d06-a2",
+          "text": "🚌 14:00 Peru Hop Stage 3",
+          "isHighlight": false
+        },
+        {
+          "id": "d06-a3",
+          "text": "16:30 Nazca Viewing Tower",
+          "isHighlight": false
+        },
+        {
+          "id": "d06-a4",
+          "text": "🌙 Overnight bus to Arequipa",
           "isHighlight": false
         }
       ],
