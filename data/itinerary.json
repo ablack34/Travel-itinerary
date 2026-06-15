@@ -474,11 +474,6 @@
       "location": "Cusco",
       "activities": [
         {
-          "id": "d23-a1",
-          "text": "🚌 Peru Hop bus from Puno",
-          "isHighlight": false
-        },
-        {
           "id": "d23-a2",
           "text": "🛂 Border crossing",
           "isHighlight": false
