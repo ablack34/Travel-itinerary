@@ -248,36 +248,6 @@
       "links": []
     },
     {
-      "id": "d11",
-      "country": "peru",
-      "location": "🇵🇪 Arequipa",
-      "activities": [
-        {
-          "id": "d11-a1",
-          "text": "☕ Acclimatization day",
-          "isHighlight": false
-        },
-        {
-          "id": "d11-a2",
-          "text": "Plaza de Armas, San Pedro market",
-          "isHighlight": false
-        },
-        {
-          "id": "d11-a3",
-          "text": "Coca tea & easy pace at 3,400m",
-          "isHighlight": false
-        }
-      ],
-      "links": [
-        {
-          "id": "d9f59850-31aa-45df-952d-9c202f3987b6",
-          "label": "Airbnb",
-          "url": "https://www.airbnb.co.uk/rooms/1280644602373571543?unique_share_id=e20e728e-25e6-48be-b845-c237378350ce&viralityEntryPoint=1&s=76",
-          "type": "accommodation"
-        }
-      ]
-    },
-    {
       "id": "d10",
       "country": "peru",
       "location": "🇵🇪 Arequipa → Cusco",
@@ -311,6 +281,36 @@
       "links": [
         {
           "id": "d3d57f5a-720f-4271-984f-8d728940bcad",
+          "label": "Airbnb",
+          "url": "https://www.airbnb.co.uk/rooms/1280644602373571543?unique_share_id=e20e728e-25e6-48be-b845-c237378350ce&viralityEntryPoint=1&s=76",
+          "type": "accommodation"
+        }
+      ]
+    },
+    {
+      "id": "d11",
+      "country": "peru",
+      "location": "🇵🇪 Arequipa",
+      "activities": [
+        {
+          "id": "d11-a1",
+          "text": "☕ Acclimatization day",
+          "isHighlight": false
+        },
+        {
+          "id": "d11-a2",
+          "text": "Plaza de Armas, San Pedro market",
+          "isHighlight": false
+        },
+        {
+          "id": "d11-a3",
+          "text": "Coca tea & easy pace at 3,400m",
+          "isHighlight": false
+        }
+      ],
+      "links": [
+        {
+          "id": "d9f59850-31aa-45df-952d-9c202f3987b6",
           "label": "Airbnb",
           "url": "https://www.airbnb.co.uk/rooms/1280644602373571543?unique_share_id=e20e728e-25e6-48be-b845-c237378350ce&viralityEntryPoint=1&s=76",
           "type": "accommodation"
