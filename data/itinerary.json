@@ -276,11 +276,6 @@
       "location": "🇵🇪 Arequipa",
       "activities": [
         {
-          "id": "d15-a1",
-          "text": "🏛️ Sacsayhuáman ruins",
-          "isHighlight": false
-        },
-        {
           "id": "d15-a2",
           "text": "San Blas neighbourhood",
           "isHighlight": false
