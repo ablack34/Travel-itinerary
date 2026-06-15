@@ -276,11 +276,6 @@
       "location": "🇵🇪 Arequipa",
       "activities": [
         {
-          "id": "d15-a2",
-          "text": "San Blas neighbourhood",
-          "isHighlight": false
-        },
-        {
           "id": "d15-a3",
           "text": "Recovery day after Rainbow Mtn",
           "isHighlight": false
