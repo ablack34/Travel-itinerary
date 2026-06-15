@@ -474,11 +474,6 @@
       "location": "Cusco",
       "activities": [
         {
-          "id": "d23-a2",
-          "text": "🛂 Border crossing",
-          "isHighlight": false
-        },
-        {
           "id": "d23-a3",
           "text": "⛪ Explore Copacabana",
           "isHighlight": false
