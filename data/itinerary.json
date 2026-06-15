@@ -163,18 +163,7 @@
       "id": "d07",
       "country": "peru",
       "location": "🇵🇪 Huacachina",
-      "activities": [
-        {
-          "id": "d07-a3",
-          "text": "🍽️ Rocoto relleno & queso helado",
-          "isHighlight": false
-        },
-        {
-          "id": "d07-a4",
-          "text": "Rooftop dinner, volcano views",
-          "isHighlight": false
-        }
-      ],
+      "activities": [],
       "links": []
     },
     {
