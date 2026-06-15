@@ -488,11 +488,6 @@
       "location": "🇵🇪 Cusco",
       "activities": [
         {
-          "id": "d25-a1",
-          "text": "🚌 Travel from Copacabana",
-          "isHighlight": false
-        },
-        {
           "id": "d25-a2",
           "text": "🚡 Teleférico rides",
           "isHighlight": false
