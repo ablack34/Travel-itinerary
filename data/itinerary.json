@@ -255,13 +255,6 @@
       "links": []
     },
     {
-      "id": "d13",
-      "country": "peru",
-      "location": "🇵🇪 Arequipa",
-      "activities": [],
-      "links": []
-    },
-    {
       "id": "d10",
       "country": "peru",
       "location": "🇵🇪 Arequipa → Cusco",
@@ -300,6 +293,13 @@
           "type": "accommodation"
         }
       ]
+    },
+    {
+      "id": "d13",
+      "country": "peru",
+      "location": "🇵🇪 Arequipa",
+      "activities": [],
+      "links": []
     },
     {
       "id": "d12",
