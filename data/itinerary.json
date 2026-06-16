@@ -90,6 +90,13 @@
       ]
     },
     {
+      "id": "d13",
+      "country": "peru",
+      "location": "🇵🇪 Cusco",
+      "activities": [],
+      "links": []
+    },
+    {
       "id": "d04",
       "country": "peru",
       "location": "🇵🇪 Lima → Paracas",
@@ -293,13 +300,6 @@
           "type": "accommodation"
         }
       ]
-    },
-    {
-      "id": "d13",
-      "country": "peru",
-      "location": "🇵🇪 Cusco",
-      "activities": [],
-      "links": []
     },
     {
       "id": "d12",
